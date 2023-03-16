@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1678967489 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+	<iostream>
+	"Jucator.h"
+	"Echipa.h"
+
+1678966217 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+	<iostream>
+	<fstream>
+	<bits/stdc++.h>
+	"Jucator.h"
+	<cstring>
+
+1678966637 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+
+1678967457 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+	<iostream>
+	<fstream>
+	<bits/stdc++.h>
+	"Echipa.h"
+	"Jucator.h"
+
+1678967387 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+	"Jucator.h"
+	<cstring>
+
+1678967489 source:c:\users\maria\desktop\probleme\proiect-oop\bag tot aci\main.cpp
+	<iostream>
+	"Jucator.h"
+	"Echipa.h"
+
+1678966637 c:\users\maria\desktop\probleme\proiect-oop\bag tot aci\include\jucator.h
+
+1678967387 c:\users\maria\desktop\probleme\proiect-oop\bag tot aci\include\echipa.h
+	"Jucator.h"
+	<cstring>
+
+1678966217 source:c:\users\maria\desktop\probleme\proiect-oop\bag tot aci\src\jucator.cpp
+	<iostream>
+	<fstream>
+	<bits/stdc++.h>
+	"Jucator.h"
+	<cstring>
+
