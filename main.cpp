@@ -3,6 +3,7 @@
 #include "Jucator.h"
 #include "Echipa.h"
 #include "Turneu.h"
+#include "Meci.h"
 using namespace std;
 ifstream fin("poo.in");
 
@@ -25,5 +26,8 @@ int main()
     cout<<t1;
     t1.sterge_Echipa(fier);
     cout<<t1;
+    Meci m(sper,fier);
+    cout<<m;
+
     return 0;
 }

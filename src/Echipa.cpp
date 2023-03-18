@@ -95,7 +95,7 @@ Echipa::Echipa(Echipa& Gicu) ///Constructor de copiere
     numar_membri=Gicu.numar_membri;
     elo_echipa=Gicu.elo_echipa;
     Membri=new Jucator[numar_membri];
-    for(int i=0; numar_membri; ++i)
+    for(int i=0; i<numar_membri; ++i)
         Membri[i]=Gicu.Membri[i];
 }
 

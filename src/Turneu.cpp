@@ -93,5 +93,6 @@ ostream & operator<<(ostream & out,const Turneu & Gicu)
     for(i=0;i<Gicu.nr_Echipe_actual-1;++i)
         out<<Gicu.Echipe[i].get_Nume()<<", ";
     out<<Gicu.Echipe[i].get_Nume()<<'\n';
+    return out;
 }
 
