@@ -4,6 +4,7 @@
 #include "Echipa.h"
 #include "Turneu.h"
 #include "Meci.h"
+#include "Runda.h"
 using namespace std;
 ifstream fin("poo.in");
 
@@ -28,7 +29,9 @@ int main()
     cout<<t1;
     Meci m(sper,fier);
     cout<<m;
-
+    Runda r1;
+    r1.add_Meci(m);
+    cout<<r1;
 
     return 0;
 }

@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1679168046 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1679170583 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Jucator.h"
 	"Echipa.h"
 	"Turneu.h"
 	"Meci.h"
+	"Runda.h"
 
 1679142967 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
@@ -67,13 +68,13 @@
 	"Echipa.h"
 	<cstring>
 
-1679168381 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+1679170561 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Runda.h"
 	"Meci.h"
 
-1679168445 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
+1679170390 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
 

@@ -23,7 +23,9 @@ public:
     ~Runda();
 
     Runda & operator=(const Runda &);
+    friend ostream & operator<<(ostream &,const Runda &);
 
+    void add_Meci(const Meci &);
 };
 
 #endif // RUNDA_H

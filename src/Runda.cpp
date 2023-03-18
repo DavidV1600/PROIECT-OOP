@@ -42,7 +42,25 @@ Runda & Runda::operator=(const Runda & Gicu)
     return *this;
 }
 
+ostream & operator<<(ostream & out,const Runda & Gicu)
+{
+    for(int i=0;i<Gicu.nr_Meciuri;++i)
+        out<<"Meciul "<<i+1<<": "<<Gicu.Meciuri[i]<<'\n';
+}
+
 Runda::~Runda()
 {
     delete[]Meciuri;
+}
+
+void Runda::add_Meci(const Meci & Gicu)
+{
+    nr_Meciuri++;
+    Meci * temp;
+    temp=new Meci[nr_Meciuri];
+    for(int i=0;i<nr_Meciuri-1;++i)
+        temp[i]=Meciuri[i];
+    temp[nr_Meciuri-1]=Gicu;
+    delete[]Meciuri;
+    Meciuri=temp;
 }
