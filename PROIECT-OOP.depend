@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1679143358 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1679157855 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Jucator.h"
 	"Echipa.h"
+	"Turneu.h"
 
 1679142967 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
@@ -14,14 +15,14 @@
 
 1679142967 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 
-1679143589 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1679157733 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 	"Jucator.h"
 
-1679143789 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+1679157733 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
 	"Jucator.h"
 	<cstring>
 
@@ -43,14 +44,14 @@
 	"Jucator.h"
 	<cstring>
 
-1679087594 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1679158072 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 	"Turneu.h"
 
-1679142967 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1679157909 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
 	<cstring>
 

@@ -8,12 +8,13 @@ using namespace std;
 class Turneu
 {
 private:
-    static int nr_Echipe_actual;
+    int nr_Echipe_actual;
     char nume_Turneu[30];
     int taxa_Participare;
     ///Aici bag clasa premii poate
     int premiu_Total;
     int nr_Maxim_Echipe;
+    int nr_Runde;
     Echipa *Echipe;
 
 public:
@@ -36,6 +37,10 @@ public:
     void set_nr_Maxim_Echipe(const int maxim_echipe)
     {
         nr_Maxim_Echipe=maxim_echipe;
+    }
+    void set_nr_Runde(const int runde)
+    {
+        nr_Runde=runde;
     }
     void set_Echipe(const Echipa*);
 
@@ -63,9 +68,20 @@ public:
     {
         return Echipe;
     }
+    const int get_Runde()const
+    {
+        return nr_Runde;
+    }
 
-    //Turneu()
+    void add_Echipa(const Echipa &);
+    void sterge_Echipa(const Echipa &);
 
+    Turneu(int nr_Echipe_actual1=0,int nr_Maxim_Echipe1=0,int premiu_Total1=0,int taxa_Participare1=0,int nr_Runde1=0,char nume_Turneu1[30]="",Echipa * Echipe1=nullptr);
+    Turneu(Turneu &);
+    ~Turneu();
+
+    Turneu & operator=(const Turneu &);
+    friend ostream & operator<<(ostream &,const Turneu &);
 };
 
 #endif // TURNEU_H

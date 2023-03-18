@@ -112,6 +112,7 @@ Echipa& Echipa::operator=(const Echipa& Gicu) ///Operatorul de =
         delete[] Membri; // sterg valoarea veche
         numar_membri = Gicu.numar_membri;
         elo_echipa = Gicu.elo_echipa;
+        strcpy(nume,Gicu.nume);
         Membri = new Jucator[numar_membri];
         for (int i = 0; i < numar_membri; ++i)
             Membri[i] = Gicu.Membri[i];
@@ -145,5 +146,6 @@ istream & operator>>(istream & in,Echipa & Gicu)///Citire
         cout<<'\n'<<"Membrul "<<i+1<<":\n";
         in>>Gicu.Membri[i];
     }
+    cout<<'\n';
     return in;
 }
