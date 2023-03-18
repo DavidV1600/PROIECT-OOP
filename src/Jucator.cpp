@@ -96,35 +96,35 @@ Jucator& Jucator::operator=(const Jucator & Gicu)
         delete[]nume;
         delete[]prenume;
         delete[]email;
-    int lg_email=strlen(Gicu.email);
-    int lg_nume=strlen(Gicu.nume);
-    int lg_prenume=strlen(Gicu.prenume);
-    strcpy(cnp,Gicu.cnp);
-    strcpy(nr_Telefon,Gicu.nr_Telefon);
-    nume=new char[lg_nume+1];
-    prenume=new char[lg_prenume+1];
-    email=new char[lg_email+1];
-    strcpy(nume,Gicu.nume);
-    strcpy(prenume,Gicu.prenume);
-    strcpy(email,Gicu.email);
-    varsta=Gicu.varsta;
-    sex=Gicu.sex;
-    elo=Gicu.elo;
+        int lg_email=strlen(Gicu.email);
+        int lg_nume=strlen(Gicu.nume);
+        int lg_prenume=strlen(Gicu.prenume);
+        strcpy(cnp,Gicu.cnp);
+        strcpy(nr_Telefon,Gicu.nr_Telefon);
+        nume=new char[lg_nume+1];
+        prenume=new char[lg_prenume+1];
+        email=new char[lg_email+1];
+        strcpy(nume,Gicu.nume);
+        strcpy(prenume,Gicu.prenume);
+        strcpy(email,Gicu.email);
+        varsta=Gicu.varsta;
+        sex=Gicu.sex;
+        elo=Gicu.elo;
     }
     return *this;
 }
 
-ostream & operator <<(ostream &out,const Jucator & Gicu)
+ostream & operator <<(ostream &out,const Jucator & Gicu1)
 {
-    out<<"Cnp: "<<Gicu.cnp<<'\n'<<"Nume si Prenume: "<<Gicu.nume<<" "<<Gicu.prenume<<'\n'<<"Varsta: "<<Gicu.varsta<<'\n'<<"Sex: ";
-    if(Gicu.sex==false)
+    out<<"Cnp: "<<Gicu1.cnp<<'\n'<<"Nume si Prenume: "<<Gicu1.nume<<" "<<Gicu1.prenume<<'\n'<<"Varsta: "<<Gicu1.varsta<<'\n'<<"Sex: ";
+    if(Gicu1.sex==false)
         out<<"Feminin"<<'\n';
     else
         out<<"Masculin"<<'\n';
-    out<<"Elo: "<<Gicu.elo<<'\n';
-    out<<"Email: "<<Gicu.email<<'\n';
-    out<<"Nr Telefon: "<<Gicu.nr_Telefon<<'\n';
-return out;
+    out<<"Elo: "<<Gicu1.elo<<'\n';
+    out<<"Email: "<<Gicu1.email<<'\n';
+    out<<"Nr Telefon: "<<Gicu1.nr_Telefon<<'\n';
+    return out;
 }
 
 istream & operator >>(istream & in, Jucator & Gicu)
