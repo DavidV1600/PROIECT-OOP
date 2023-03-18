@@ -29,5 +29,6 @@ int main()
     Meci m(sper,fier);
     cout<<m;
 
+
     return 0;
 }

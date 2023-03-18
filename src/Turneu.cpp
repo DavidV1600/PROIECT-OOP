@@ -27,6 +27,7 @@ Turneu::Turneu(int nr_Echipe_actual1,int nr_Maxim_Echipe1,int premiu_Total1,int 
 Turneu::Turneu(Turneu & Gicu)
 {
     nr_Echipe_actual=Gicu.nr_Echipe_actual;
+    Echipe=new Echipa[nr_Echipe_actual];
     nr_Maxim_Echipe=Gicu.nr_Maxim_Echipe;
     premiu_Total=Gicu.premiu_Total;
     taxa_Participare=Gicu.taxa_Participare;

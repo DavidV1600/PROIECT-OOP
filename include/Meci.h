@@ -28,7 +28,7 @@ public:
 
     Meci(Echipa Echipa1,Echipa Echipa2,int scor1=0,int scor2=0,bool rezultat_final=1);
     Meci(Meci &);
-
+    Meci(){};
     Meci & operator=(const Meci &);
     friend ostream & operator<<(ostream &,const Meci &);
 

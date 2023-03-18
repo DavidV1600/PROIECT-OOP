@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1679165928 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1679168046 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Jucator.h"
@@ -45,7 +45,7 @@
 	"Jucator.h"
 	<cstring>
 
-1679163566 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1679169367 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
@@ -56,14 +56,24 @@
 	"Echipa.h"
 	<cstring>
 
-1679165730 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
+1679168932 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Meci.h"
 	"Echipa.h"
 
-1679165912 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
+1679168475 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
 	"Echipa.h"
 	<cstring>
+
+1679168381 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+	<iostream>
+	<fstream>
+	<bits/stdc++.h>
+	"Runda.h"
+	"Meci.h"
+
+1679168445 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
+	"Meci.h"
 
