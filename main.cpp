@@ -1,21 +1,18 @@
 #include <iostream>
 #include <fstream>
-#include "Jucator.h"
-#include "Echipa.h"
 #include "Turneu.h"
-#include "Meci.h"
-#include "Runda.h"
 using namespace std;
 ifstream fin("poo.in");
 
 int main()
 {
     Turneu T;
-    T.Citire_Nume_Turneu();
+    cin>>T;
     int nr_Echipe;
     int nr_Jucatori;
     cout<<"Introdu Numar Echipe: ";
     cin>>nr_Echipe;
+    nr_Echipe=min(T.get_nr_Maxim_Echipe(),nr_Echipe);
     cin.get();
     for(int i=1;i<=nr_Echipe;++i)
     {
@@ -37,6 +34,7 @@ int main()
 
     }
     cout<<T;
+
 
     /*Jucator a("07434983","Bita","Ghita",10,false,2058);
     Jucator b("38749993","Ionescu","Lucian",13,true,1895);

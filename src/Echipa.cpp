@@ -2,7 +2,6 @@
 #include <fstream>
 #include <bits/stdc++.h>
 #include "Echipa.h"
-#include "Jucator.h"
 using namespace std;
 
 
@@ -16,11 +15,12 @@ void Echipa::set_Membri(const Jucator * Lista_Jucatori)
 
 }
 
-Echipa::Echipa(char nume_1[],int nr_membri,int echipa_elo,Jucator *Membru) ///Constructorul
+Echipa::Echipa(char nume_1[],int nr_membri,int echipa_elo,Jucator *Membru,int puncte1) ///Constructorul
 {
     strcpy(nume,nume_1);
     numar_membri=nr_membri;
     elo_echipa=echipa_elo;
+    puncte=puncte1;
     Membri=Membru;
 }
 
@@ -93,8 +93,9 @@ void Echipa::Sterge_Jucator(const Jucator& jucatorDeSters)
 Echipa::Echipa(Echipa& Gicu) ///Constructor de copiere
 {
 
-    strcpy(nume,Gicu.nume);
+    strcpy(nume,Gicu.nume);///de ce la construcorul de copiere nu imi recomanda scriptul???
     numar_membri=Gicu.numar_membri;
+    puncte=Gicu.puncte;
     elo_echipa=Gicu.elo_echipa;
     Membri=new Jucator[numar_membri];
     for(int i=0; i<numar_membri; ++i)
@@ -103,7 +104,6 @@ Echipa::Echipa(Echipa& Gicu) ///Constructor de copiere
 
 Echipa::~Echipa()
 {
-    strcpy(nume,"");///NUS daca trebe
     delete []Membri;
 }
 
@@ -114,6 +114,7 @@ Echipa& Echipa::operator=(const Echipa& Gicu) ///Operatorul de =
         delete[] Membri; // sterg valoarea veche
         numar_membri = Gicu.numar_membri;
         elo_echipa = Gicu.elo_echipa;
+        puncte=Gicu.puncte;
         strcpy(nume,Gicu.nume);
         Membri = new Jucator[numar_membri];
         for (int i = 0; i < numar_membri; ++i)

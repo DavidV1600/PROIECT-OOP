@@ -1,8 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <bits/stdc++.h>
-#include "Meci.h"
-#include "Echipa.h" ///Mai tre sa o includ intrebare de pus
+#include "Meci.h" ///Mai tre sa o includ intrebare de pus
 using namespace std;
 
 Meci::Meci(Echipa Echipa1,Echipa Echipa2,int scor1,int scor2,bool rezultat_final)///constructor implicit

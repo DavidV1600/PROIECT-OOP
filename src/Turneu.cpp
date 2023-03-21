@@ -1,15 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include <bits/stdc++.h>
-#include "Echipa.h"
 #include "Turneu.h"
 using namespace std;
+#define swap (Echipa a,Echipa b) Echipa c=Echipa a; a=b; b=c;
 
 void Turneu::set_Echipe(const Echipa * Echipe1)///Setter pentru Echipe
 {
     nr_Echipe_actual = sizeof(Echipe1) / sizeof(Echipe1[0]);
     Echipe=new Echipa[nr_Echipe_actual];
-    for(int i=0;i<nr_Echipe_actual;++i)
+    for(int i=0; i<nr_Echipe_actual; ++i)
         Echipe[i]=Echipe1[i];
 }
 
@@ -17,7 +17,7 @@ void Turneu::set_Runde(const Runda * Runde1)
 {
     nr_Runde=sizeof(Runde1)/ sizeof(Runde1[0]);
     Runde=new Runda[nr_Runde];
-    for(int i=0;i<nr_Runde;++i)
+    for(int i=0; i<nr_Runde; ++i)
         Runde[i]=Runde1[i];
 }
 
@@ -44,9 +44,9 @@ Turneu::Turneu(Turneu & Gicu)///Constructor de copiere
     taxa_Participare=Gicu.taxa_Participare;
     nr_Runde=Gicu.nr_Runde;
     strcpy(nume_Turneu,Gicu.nume_Turneu);
-    for(int i=0;i<nr_Echipe_actual;++i)
+    for(int i=0; i<nr_Echipe_actual; ++i)
         Echipe[i]=Gicu.Echipe[i];
-    for(int i=0;i<nr_Runde;++i)
+    for(int i=0; i<nr_Runde; ++i)
         Runde[i]=Gicu.Runde[i];
 }
 
@@ -55,7 +55,7 @@ void Turneu::add_Echipa(const Echipa & Gicu)///Functie de adaugare Echipe
     nr_Echipe_actual++;
     Echipa * temp;
     temp=new Echipa[nr_Echipe_actual];
-    for(int i=0;i<nr_Echipe_actual-1;++i)
+    for(int i=0; i<nr_Echipe_actual-1; ++i)
         temp[i]=Echipe[i];
     temp[nr_Echipe_actual-1]=Gicu;
     delete[]Echipe;
@@ -67,7 +67,7 @@ void Turneu::add_Runda(const Runda & Gicu)///Functie de adaugare Runda
     nr_Runde++;
     Runda * temp;
     temp=new Runda[nr_Runde];
-    for(int i=0;i<nr_Runde-1;++i)
+    for(int i=0; i<nr_Runde-1; ++i)
         temp[i]=Runde[i];
     temp[nr_Echipe_actual-1]=Gicu;
     delete[]Runde;
@@ -80,12 +80,12 @@ void Turneu::sterge_Echipa(const Echipa & Gicu)///Functie de stergere Echipe
     Echipa * temp;
     temp = new Echipa[nr_Echipe_actual];
     int k=0;
-    for(int i=0;i<=nr_Echipe_actual;++i)
+    for(int i=0; i<=nr_Echipe_actual; ++i)
         if(strcmp(Echipe[i].get_Nume(),Gicu.get_Nume())!=0)
-    {
-        temp[k]=Echipe[i];
-        k++;
-    }
+        {
+            temp[k]=Echipe[i];
+            k++;
+        }
     delete[]Echipe;
     Echipe=temp;
 }
@@ -96,26 +96,34 @@ void Turneu::sterge_Runda(const Runda & Gicu)///functie de stergere runda
     Runda * temp;
     temp = new Runda[nr_Runde];
     int k=0;
-    for(int i=0;i<=nr_Runde;++i)
+    for(int i=0; i<=nr_Runde; ++i)
         if(Runde[i].get_nr_Runda()!=Gicu.get_nr_Runda())
-    {
-        temp[k]=Runde[i];
-        k++;
-    }
+        {
+            temp[k]=Runde[i];
+            k++;
+        }
     delete[]Runde;
     Runde=temp;
 }
 
-void Turneu::Sortare_Dupa_Elo()///functie sortare crescatoare dupa elo
+void Turneu::Sortare_Echipe_Inaintea_Rundei()///functie sortare dupa puncte acumulate , iar in caz de egalitate apoi dupa elo
 {
-  for(int i=0;i<nr_Echipe_actual-1;++i)
-  for(int j=i+1;j<nr_Echipe_actual;++j)
-    if(Echipe[i].get_Elo_Echipa()<Echipe[j].get_Elo_Echipa())
-  {
-      Echipa temp=Echipe[i];
-      Echipe[i]=Echipe[j];
-      Echipe[j]=temp;
-  }
+    for(int i=0; i<nr_Echipe_actual-1; ++i)
+        for(int j=i+1; j<nr_Echipe_actual; ++j)
+        {
+            if(Echipe[i].get_Puncte()<Echipe[j].get_Puncte())
+            {
+                Echipa temp=Echipe[i];
+                Echipe[i]=Echipe[j];
+                Echipe[j]=temp;
+            }
+            else if(Echipe[i].get_Puncte()==Echipe[i].get_Puncte() && Echipe[i].get_Elo_Echipa()<Echipe[j].get_Elo_Echipa()){
+                Echipa temp=Echipe[i];
+                Echipe[i]=Echipe[j];
+                Echipe[j]=temp;
+            }
+
+        }
 }
 
 Turneu::~Turneu()///Destructor
@@ -126,21 +134,22 @@ Turneu::~Turneu()///Destructor
 
 Turneu & Turneu::operator=(const Turneu & Gicu)///redefinire operatorul =
 {
-    if(this!=&Gicu){
-    delete[]Echipe;
-    delete[]Runde;
-    Echipe=new Echipa[Gicu.nr_Echipe_actual];
-    Runde=new Runda[Gicu.nr_Runde];
-    nr_Echipe_actual=Gicu.nr_Echipe_actual;
-    nr_Maxim_Echipe=Gicu.nr_Maxim_Echipe;
-    premiu_Total=Gicu.premiu_Total;
-    taxa_Participare=Gicu.taxa_Participare;
-    nr_Runde=Gicu.nr_Runde;
-    strcpy(nume_Turneu,Gicu.nume_Turneu);
-    for(int i=0;i<nr_Echipe_actual;++i)
-        Echipe[i]=Gicu.Echipe[i];
-    for(int i=0;i<nr_Runde;++i)
-        Runde[i]=Gicu.Runde[i];
+    if(this!=&Gicu)
+    {
+        delete[]Echipe;
+        delete[]Runde;
+        Echipe=new Echipa[Gicu.nr_Echipe_actual];
+        Runde=new Runda[Gicu.nr_Runde];
+        nr_Echipe_actual=Gicu.nr_Echipe_actual;
+        nr_Maxim_Echipe=Gicu.nr_Maxim_Echipe;
+        premiu_Total=Gicu.premiu_Total;
+        taxa_Participare=Gicu.taxa_Participare;
+        nr_Runde=Gicu.nr_Runde;
+        strcpy(nume_Turneu,Gicu.nume_Turneu);
+        for(int i=0; i<nr_Echipe_actual; ++i)
+            Echipe[i]=Gicu.Echipe[i];
+        for(int i=0; i<nr_Runde; ++i)
+            Runde[i]=Gicu.Runde[i];
 
     }
     return *this;
@@ -148,12 +157,22 @@ Turneu & Turneu::operator=(const Turneu & Gicu)///redefinire operatorul =
 
 ostream & operator<<(ostream & out,Turneu & Gicu)///redefinire operator << (Afisare Turneu)
 {
-    Gicu.Sortare_Dupa_Elo();
+    Gicu.Sortare_Echipe_Inaintea_Rundei();
     out<<"Nume Turneu: "<<Gicu.nume_Turneu<<'\n';
     out<<"Lista de start:\n";
     int i;
-    for(i=0;i<Gicu.nr_Echipe_actual;++i)
+    for(i=0; i<Gicu.nr_Echipe_actual; ++i)
         out<<i+1<<".) "<<Gicu.Echipe[i].get_Nume()<<"  Elo: "<<Gicu.Echipe[i].get_Elo_Echipa()<<'\n';
     return out;
+}
+
+istream & operator>>(istream & in,Turneu & Gicu)
+{
+    cout<<"Introdu Numele Turneului: ";
+    in.getline(Gicu.nume_Turneu,30);
+    cout<<"Cate runde va avea turneul: ";
+    in>>Gicu.nr_Runde;
+    cout<<"Numarul Maxim de Echipe Admis: ";
+    in>>Gicu.nr_Maxim_Echipe;
 }
 

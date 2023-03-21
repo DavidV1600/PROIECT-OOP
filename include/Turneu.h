@@ -84,12 +84,7 @@ public:
     void sterge_Echipa(const Echipa &);
     void add_Runda(const Runda &);
     void sterge_Runda(const Runda &);
-    void Sortare_Dupa_Elo();
-    void Citire_Nume_Turneu()
-    {
-        cout<<"Introdu Numele Turneului: ";
-        cin.getline(nume_Turneu,30);
-    }
+    void Sortare_Echipe_Inaintea_Rundei();
 
     Turneu(int nr_Echipe_actual1=0,int nr_Maxim_Echipe1=0,int premiu_Total1=0,int taxa_Participare1=0,int nr_Runde1=0,char nume_Turneu1[30]="",Echipa * Echipe1=nullptr,Runda *Runde1=nullptr);
     Turneu(Turneu &);
@@ -97,6 +92,7 @@ public:
 
     Turneu & operator=(const Turneu &);
     friend ostream & operator<<(ostream &,Turneu &);
+    friend istream & operator>>(istream &,Turneu &);
 };
 
 #endif // TURNEU_H

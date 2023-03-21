@@ -9,6 +9,7 @@ private:
     char nume[20];
     int numar_membri;
     int elo_echipa;
+    int puncte;
     Jucator *Membri;
 public:
     void set_Nume(char text[])
@@ -22,6 +23,10 @@ public:
     void set_Elo_Echipa(int elo)
     {
         elo_echipa=elo;   ///SETTERI
+    }
+    void set_Puncte(const int x)
+    {
+        puncte=x;
     }
     void set_Membri(const Jucator *);
 
@@ -50,8 +55,12 @@ public:
     {
         return Membri;
     }
+    const int get_Puncte()const
+    {
+        return puncte;
+    }
 
-    Echipa(char nume_1[]="",int nr_membri=0,int echipa_elo=0,Jucator *Membru=nullptr); ///CONSTRUCTOR
+    Echipa(char nume_1[]="",int nr_membri=0,int echipa_elo=0,Jucator *Membru=nullptr,int puncte1=0); ///CONSTRUCTOR
     Echipa(Echipa &); ///Constructor de copiere
     ~Echipa(); ///Destructor
 

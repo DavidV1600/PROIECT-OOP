@@ -2,7 +2,6 @@
 #include <fstream>
 #include <bits/stdc++.h>
 #include "Runda.h"
-#include "Meci.h"
 using namespace std;
 
 void Runda::set_Meciuri(const Meci * Gicu)///Setter pentru Meciuri
