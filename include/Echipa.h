@@ -28,6 +28,11 @@ public:
     void Calculeaza_Medie(); ///calculez media jucatorilor
     void Add_Membru(const Jucator &); ///bag membru
     void Sterge_Jucator(const Jucator& jucatorDeSters);
+    void Citire_Nume_Echipa()
+    {
+        cout<<"Introdu Numele Echipei: ";
+        cin.getline(nume,20);
+    }
 
     const char* get_Nume()const
     {

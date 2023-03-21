@@ -5,7 +5,7 @@
 #include "Echipa.h" ///Mai tre sa o includ intrebare de pus
 using namespace std;
 
-Meci::Meci(Echipa Echipa1,Echipa Echipa2,int scor1,int scor2,bool rezultat_final)
+Meci::Meci(Echipa Echipa1,Echipa Echipa2,int scor1,int scor2,bool rezultat_final)///constructor implicit
 {
     Echipa_1=Echipa1;
     Echipa_2=Echipa2;
@@ -13,7 +13,7 @@ Meci::Meci(Echipa Echipa1,Echipa Echipa2,int scor1,int scor2,bool rezultat_final
     scor_2=scor2;
     rezultat_final=rezultat_final;
 }
-Meci::Meci(Meci & Gicu)
+Meci::Meci(Meci & Gicu)///constructor de copiere
 {
     Echipa_1=Gicu.Echipa_1;
     Echipa_2=Gicu.Echipa_2;
@@ -22,7 +22,7 @@ Meci::Meci(Meci & Gicu)
     rezultat_final=Gicu.rezultat_final;
 }
 
-Meci & Meci::operator=(const Meci & Gicu)
+Meci & Meci::operator=(const Meci & Gicu)///redefinire operator =
 {
     if(this!=&Gicu){
     Echipa_1=Gicu.Echipa_1;
@@ -34,7 +34,7 @@ Meci & Meci::operator=(const Meci & Gicu)
     return *this;
 }
 
-ostream & operator<<(ostream & out,const Meci & Gicu)
+ostream & operator<<(ostream & out,const Meci & Gicu)///redefinire operator << (Afisare Meci)
 {
     out<<Gicu.Echipa_1.get_Nume()<<" "<<Gicu.scor_1<<"-"<<Gicu.scor_2<<" "<<Gicu.Echipa_2.get_Nume()<<'\n';
 return out;

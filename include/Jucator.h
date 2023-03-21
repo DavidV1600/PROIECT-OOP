@@ -27,7 +27,7 @@ public:
     }
     const char* get_Prenume()const
     {
-        return prenume;   ///Getteri
+        return prenume;                                       ///Getteri
     }
     const int  get_Varsta()const
     {

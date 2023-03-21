@@ -36,11 +36,15 @@
 		</Compiler>
 		<Unit filename="include/Echipa.h" />
 		<Unit filename="include/Jucator.h" />
+		<Unit filename="include/Meci.h" />
+		<Unit filename="include/Runda.h" />
 		<Unit filename="include/Turneu.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="poo.in" />
 		<Unit filename="src/Echipa.cpp" />
 		<Unit filename="src/Jucator.cpp" />
+		<Unit filename="src/Meci.cpp" />
+		<Unit filename="src/Runda.cpp" />
 		<Unit filename="src/Turneu.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

@@ -1,6 +1,7 @@
 #ifndef TURNEU_H
 #define TURNEU_H
 #include "Echipa.h"
+#include "Runda.h"
 #include <cstring>
 
 using namespace std;
@@ -16,6 +17,7 @@ private:
     int nr_Maxim_Echipe;
     int nr_Runde;
     Echipa *Echipe;
+    Runda *Runde;
 
 public:
     void set_nr_Echipe_actual(const int nr)
@@ -28,7 +30,7 @@ public:
     }
     void set_taxa_Participare(const int taxa)
     {
-        taxa_Participare=taxa;   ///SETTERI
+        taxa_Participare=taxa;                                             ///SETTERI
     }
     void set_premiu_Total(const int premiu)
     {
@@ -43,6 +45,7 @@ public:
         nr_Runde=runde;
     }
     void set_Echipe(const Echipa*);
+    void set_Runde(const Runda*);
 
     const int get_nr_Echipe_actual()const
     {
@@ -58,7 +61,7 @@ public:
     }
     const int get_nr_Maxim_Echipe()const
     {
-        return nr_Maxim_Echipe;   ///GETTERI
+        return nr_Maxim_Echipe;                                               ///GETTERI
     }
     const char* get_nume_Turneu()const
     {
@@ -68,20 +71,32 @@ public:
     {
         return Echipe;
     }
-    const int get_Runde()const
+    const Runda* get_Runde()const
+    {
+        return Runde;
+    }
+    const int get_nr_Runde()const
     {
         return nr_Runde;
     }
 
     void add_Echipa(const Echipa &);
     void sterge_Echipa(const Echipa &);
+    void add_Runda(const Runda &);
+    void sterge_Runda(const Runda &);
+    void Sortare_Dupa_Elo();
+    void Citire_Nume_Turneu()
+    {
+        cout<<"Introdu Numele Turneului: ";
+        cin.getline(nume_Turneu,30);
+    }
 
-    Turneu(int nr_Echipe_actual1=0,int nr_Maxim_Echipe1=0,int premiu_Total1=0,int taxa_Participare1=0,int nr_Runde1=0,char nume_Turneu1[30]="",Echipa * Echipe1=nullptr);
+    Turneu(int nr_Echipe_actual1=0,int nr_Maxim_Echipe1=0,int premiu_Total1=0,int taxa_Participare1=0,int nr_Runde1=0,char nume_Turneu1[30]="",Echipa * Echipe1=nullptr,Runda *Runde1=nullptr);
     Turneu(Turneu &);
     ~Turneu();
 
     Turneu & operator=(const Turneu &);
-    friend ostream & operator<<(ostream &,const Turneu &);
+    friend ostream & operator<<(ostream &,Turneu &);
 };
 
 #endif // TURNEU_H

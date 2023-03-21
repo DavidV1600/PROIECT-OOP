@@ -12,6 +12,7 @@ void Echipa::set_Membri(const Jucator * Lista_Jucatori)
     Membri=new Jucator[numar_membri];
     for(int i=0; i<numar_membri; ++i)
         Membri[i]=Lista_Jucatori[i];
+    Calculeaza_Medie();
 
 }
 
@@ -44,7 +45,7 @@ void Echipa::Add_Membru(const Jucator & Gicu) ///Adaug Membru
     temp[numar_membri-1]=Gicu;            ///Salvez in variabla temporara ca nus sa dau realoc
     delete[]Membri;
     Membri =temp;
-
+    Calculeaza_Medie();
 }
 
 void Echipa::Sterge_Jucator(const Jucator& jucatorDeSters)
@@ -84,6 +85,7 @@ void Echipa::Sterge_Jucator(const Jucator& jucatorDeSters)
     numar_membri--;
     delete[] Membri;
     Membri = MembriNoi;
+    Calculeaza_Medie();
 }
 
 

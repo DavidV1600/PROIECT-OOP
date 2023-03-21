@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1679170583 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1679423333 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Jucator.h"
@@ -8,23 +8,23 @@
 	"Meci.h"
 	"Runda.h"
 
-1679142967 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1679423045 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Jucator.h"
 	<cstring>
 
-1679142967 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+1679394953 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 
-1679165682 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1679418683 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 	"Jucator.h"
 
-1679157733 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+1679424336 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
 	"Jucator.h"
 	<cstring>
 
@@ -46,29 +46,30 @@
 	"Jucator.h"
 	<cstring>
 
-1679169367 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1679421247 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 	"Turneu.h"
 
-1679157909 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1679424236 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
+	"Runda.h"
 	<cstring>
 
-1679168932 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
+1679394954 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Meci.h"
 	"Echipa.h"
 
-1679168475 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
+1679394954 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
 	"Echipa.h"
 	<cstring>
 
-1679170561 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+1679395189 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>

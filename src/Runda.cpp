@@ -5,7 +5,7 @@
 #include "Meci.h"
 using namespace std;
 
-void Runda::set_Meciuri(const Meci * Gicu)
+void Runda::set_Meciuri(const Meci * Gicu)///Setter pentru Meciuri
 {
     nr_Meciuri = sizeof(Gicu) / sizeof(Gicu[0]);
     Meciuri= new Meci[nr_Meciuri];
@@ -13,14 +13,14 @@ void Runda::set_Meciuri(const Meci * Gicu)
         Meciuri[i]=Gicu[i];
 }
 
-Runda::Runda(Meci * Meciuri1,int runda1,int nr_Meciuri1)
+Runda::Runda(Meci * Meciuri1,int runda1,int nr_Meciuri1)///Constructor cu parametri impliciti
 {
     Meciuri=Meciuri1;
     nr_Runda=runda1;
     nr_Meciuri=nr_Meciuri1;
 }
 
-Runda::Runda(Runda & Gicu)
+Runda::Runda(Runda & Gicu)///Constructor de copiere
 {
     nr_Meciuri=Gicu.nr_Meciuri;
     nr_Runda=Gicu.nr_Runda;
@@ -29,7 +29,7 @@ Runda::Runda(Runda & Gicu)
         Meciuri[i]=Gicu.Meciuri[i];
 }
 
-Runda & Runda::operator=(const Runda & Gicu)
+Runda & Runda::operator=(const Runda & Gicu)///redefinire operatorul =
 {
     if(this!=&Gicu){
     delete[]Meciuri;
@@ -42,18 +42,18 @@ Runda & Runda::operator=(const Runda & Gicu)
     return *this;
 }
 
-ostream & operator<<(ostream & out,const Runda & Gicu)
+ostream & operator<<(ostream & out,const Runda & Gicu)///redefinire operator << (Afisare Runda)
 {
     for(int i=0;i<Gicu.nr_Meciuri;++i)
         out<<"Meciul "<<i+1<<": "<<Gicu.Meciuri[i]<<'\n';
 }
 
-Runda::~Runda()
+Runda::~Runda()///Destructor
 {
     delete[]Meciuri;
 }
 
-void Runda::add_Meci(const Meci & Gicu)
+void Runda::add_Meci(const Meci & Gicu)///Functie de Adaugare Meci
 {
     nr_Meciuri++;
     Meci * temp;

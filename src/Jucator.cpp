@@ -89,7 +89,7 @@ Jucator::~Jucator() ///definire destructor
     delete []email;
 }
 
-Jucator& Jucator::operator=(const Jucator & Gicu)
+Jucator& Jucator::operator=(const Jucator & Gicu) ///redefinire operator =
 {
     if(this != &Gicu)
     {
@@ -114,7 +114,7 @@ Jucator& Jucator::operator=(const Jucator & Gicu)
     return *this;
 }
 
-ostream & operator <<(ostream &out,const Jucator & Gicu1)
+ostream & operator <<(ostream &out,const Jucator & Gicu1)///redefinire operatorul << (Afisare Jucator)
 {
     out<<"Cnp: "<<Gicu1.cnp<<'\n'<<"Nume si Prenume: "<<Gicu1.nume<<" "<<Gicu1.prenume<<'\n'<<"Varsta: "<<Gicu1.varsta<<'\n'<<"Sex: ";
     if(Gicu1.sex==false)
@@ -127,7 +127,7 @@ ostream & operator <<(ostream &out,const Jucator & Gicu1)
     return out;
 }
 
-istream & operator >>(istream & in, Jucator & Gicu)
+istream & operator >>(istream & in, Jucator & Gicu)///redefinire operator >> (Citire Jucator)
 {
     int lg;
     char text[100];
@@ -163,6 +163,6 @@ istream & operator >>(istream & in, Jucator & Gicu)
     in>>Gicu.sex;
     cout<<"Introdu Elo: ";
     in>>Gicu.elo;
-    in.get();
+    cout<<'\n';
     return in;
 }

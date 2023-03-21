@@ -16,13 +16,13 @@ private:
 public:
     void set_Echipa1(const Echipa Echipa1){Echipa_1=Echipa1;}
     void set_Echipa2(const Echipa Echipa2){Echipa_2=Echipa2;}
-    void set_scor_1(const int scor){scor_1=scor;}
+    void set_scor_1(const int scor){scor_1=scor;}          ///Setteri
     void set_scor_2(const int scor){scor_2=scor;}///Cand castiga: 1-primul, 0-al doilea
     void set_rezultat_final(const bool rez){rezultat_final=rez;}
 
     const Echipa& get_Echipa1 ()const{return Echipa_1;}
     const Echipa& get_Echipa2 ()const{return Echipa_2;}
-    const int get_scor_1 ()const{return scor_1;}
+    const int get_scor_1 ()const{return scor_1;}///Getteri
     const int get_scor_2 ()const{return scor_2;}
     const bool get_rezultat ()const{return rezultat_final;}
 
