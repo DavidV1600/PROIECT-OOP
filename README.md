@@ -1,15 +1,29 @@
-# PROIECT-OOP
+# Proiect-OOP
  
-Aplicatie de creat Competitii Sportive
+## Aplicatie de creat Competitii Sportive
 
-Clase implementate:
+## Clase implementate:
 
-Jucator: retin datele jucatorulu (CNP,nume,prenume,email,elo)
+### Jucator:
+Reprezinta un om, membru al unei echipe si retine datele acestuia(cnp,nume,prenume,etc);
 
-Echipa: este formata din mai multi jucatori si are drept atribute: nume, numar membri, elo-ul echipei(media elo a jucatorilor)
+Este capabila sa citeasca datele unui Jucator si sa le afiseze;
+### Echipa:
+Reprezinta o echipa, formata din mai multi jucatorii are ca date membre(numele echipei,jucatorii,elo-ul echipei,numarul de jucatorii);
 
-Meci: este format din 2 Echipe, scorurie lor, si rezultatul final care decide echipa castigatoare
+Este capabila sa citeasca o echipa si membri acesteia, sa calculeze media elo a jucatoriilor ei, aceasta fiind elo-ul echipei si sa le afiseze;
 
-Runda: este formata dintr-o lista de meciuri, numarul acestora si contine un numar reprezentand a cata runda din competitie este
+### Meci:
+Reprezinta un meci, disputat intre 2 echipe cu un scor si un rezultat final care decide castigatorul;
 
-Turneu: este clasa principala care este formata dintr-o lista de Echipe, numarul acestora, numarul rundelor, o taxa de inscriere per echipa, denumirea turneului, premiul total (in ron) si numarul maxim de echipe admise pentru a participa
+Este capabila sa afiseze scorul celor doua echipe si castigatorul meciului;
+
+### Runda:
+Este o runda a turneului, formata dintr-o lista de meciuri, retinand numarul rundei actuale si al meciurilor disputate;
+
+Este capabila sa afiseze o lista cu toate meciurile jucate si cu rezultatele acestora;
+
+### Turneu:
+Este clasa principala, care este formata dintr-o lista de echipe participante, o lista de runde, numarul acestora, o taxa de inscriere per echipa, numele turneului si fondul de premii;
+
+Este capabila sa citeasca toate echipele participante la turneu si restul datelor membre ale clasei, sa le afiseze;
