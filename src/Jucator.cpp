@@ -44,7 +44,7 @@ void Jucator::set_NrTelefon(const char text[])
     strcpy(nr_Telefon,text);
 }
 
-Jucator::Jucator(char cnp_1[], char nume_1[], char prenume_1[], int varsta_1, bool sex_1, int elo_1,char email1[],char nr_Telefon1[]) ///definire constructor
+Jucator::Jucator(const char cnp_1[],const char nume_1[],const char prenume_1[], int varsta_1, bool sex_1, int elo_1,const char email1[],const char nr_Telefon1[]) ///definire constructor
 {
     int lg_nume=strlen(nume_1);
     int lg_prenume=strlen(prenume_1);

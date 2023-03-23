@@ -15,7 +15,7 @@ void Echipa::set_Membri(const Jucator * Lista_Jucatori)
 
 }
 
-Echipa::Echipa(char nume_1[],int nr_membri,int echipa_elo,Jucator *Membru,int puncte1) ///Constructorul
+Echipa::Echipa(const char nume_1[],int nr_membri,int echipa_elo,Jucator *Membru,int puncte1) ///Constructorul
 {
     strcpy(nume,nume_1);
     numar_membri=nr_membri;

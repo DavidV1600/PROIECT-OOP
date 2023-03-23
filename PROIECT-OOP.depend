@@ -4,22 +4,22 @@
 	<fstream>
 	"Turneu.h"
 
-1679423045 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1679571522 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Jucator.h"
 	<cstring>
 
-1679394953 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+1679571519 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 
-1679427802 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1679571555 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 
-1679426949 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+1679571555 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
 	"Jucator.h"
 	<cstring>
 
@@ -41,13 +41,13 @@
 	"Jucator.h"
 	<cstring>
 
-1679427744 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1679570705 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Turneu.h"
 
-1679428600 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1679571606 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
 	"Runda.h"
 	<cstring>
@@ -58,16 +58,16 @@
 	<bits/stdc++.h>
 	"Meci.h"
 
-1679394954 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
+1679570080 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
 	"Echipa.h"
 	<cstring>
 
-1679427802 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+1679570310 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Runda.h"
 
-1679170390 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
+1679566498 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
 

@@ -64,7 +64,7 @@ public:
         cout<<prenume<<varsta<<sex<<elo;
     }
 ///SA PUN CONST UNDE TREBE
-    Jucator(char cnp_1[]="Unknown", char nume_1[]="Unknown", char prenume_1[]="Unknown", int varsta_1=0, bool sex_1=false, int elo_1=0,char email1[]="Unknown",char nr_Telefon1[]="Unknown");///Constructor
+    Jucator(const char *cnp_1="Unknown", const char nume_1[]="Unknown",const char prenume_1[]="Unknown", int varsta_1=0, bool sex_1=false, int elo_1=0,const char email1[]="Unknown",const char nr_Telefon1[]="Unknown");///Constructor
     Jucator(const Jucator &); ///Constructor de copiere
     ~Jucator(); ///Destructor
 

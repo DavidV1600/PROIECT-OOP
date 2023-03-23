@@ -20,8 +20,10 @@ public:
     void set_scor_2(const int scor){scor_2=scor;}///Cand castiga: 1-primul, 0-al doilea
     void set_rezultat_final(const bool rez){rezultat_final=rez;}
 
-    const Echipa& get_Echipa1 ()const{return Echipa_1;}
+    const Echipa& get_Echipa1 ()const {return Echipa_1;}
     const Echipa& get_Echipa2 ()const{return Echipa_2;}
+    Echipa& get_Echipa1 (){return Echipa_1;}
+    Echipa& get_Echipa2 (){return Echipa_2;}
     const int get_scor_1 ()const{return scor_1;}///Getteri
     const int get_scor_2 ()const{return scor_2;}
     const bool get_rezultat ()const{return rezultat_final;}

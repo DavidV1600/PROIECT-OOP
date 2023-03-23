@@ -24,8 +24,9 @@ public:
 
     Runda & operator=(const Runda &);
     friend ostream & operator<<(ostream &,const Runda &);
-
+    friend istream & operator>>(istream &,Runda &);
     void add_Meci(const Meci &);
+    void pregateste_Runda(Echipa *);
 };
 
 #endif // RUNDA_H

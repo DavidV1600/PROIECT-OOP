@@ -15,13 +15,13 @@ void Turneu::set_Echipe(const Echipa * Echipe1)///Setter pentru Echipe
 
 void Turneu::set_Runde(const Runda * Runde1)
 {
-    nr_Runde=sizeof(Runde1)/ sizeof(Runde1[0]);
+    nr_Runde=sizeof(*Runde1)/ sizeof(Runde1[0]);
     Runde=new Runda[nr_Runde];
     for(int i=0; i<nr_Runde; ++i)
         Runde[i]=Runde1[i];
 }
 
-Turneu::Turneu(int nr_Echipe_actual1,int nr_Maxim_Echipe1,int premiu_Total1,int taxa_Participare1,int nr_Runde1,char nume_Turneu1[30],Echipa * Echipe1,Runda * Runde1)///constructor cu parametri impliciti
+Turneu::Turneu(int nr_Echipe_actual1,int nr_Maxim_Echipe1,int premiu_Total1,int taxa_Participare1,int nr_Runde1,const char nume_Turneu1[30],Echipa * Echipe1,Runda * Runde1)///constructor cu parametri impliciti
 {
     nr_Echipe_actual=nr_Echipe_actual1;
     nr_Maxim_Echipe=nr_Maxim_Echipe1;
@@ -174,5 +174,15 @@ istream & operator>>(istream & in,Turneu & Gicu)
     in>>Gicu.nr_Runde;
     cout<<"Numarul Maxim de Echipe Admis: ";
     in>>Gicu.nr_Maxim_Echipe;
+    return in;
 }
 
+void Turneu::Incepe_Turneu()
+{
+    for(int i=0;i<nr_Runde;++i)
+    {
+        Sortare_Echipe_Inaintea_Rundei();
+        Runde[i].pregateste_Runda(Echipe);
+        cin>>Runde[i];
+    }
+}
