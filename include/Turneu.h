@@ -44,8 +44,6 @@ public:
     {
         nr_Runde=runde;
     }
-    void set_Echipe(const Echipa*);
-    void set_Runde(const Runda*);
 
     const int get_nr_Echipe_actual()const
     {

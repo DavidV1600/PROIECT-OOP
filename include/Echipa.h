@@ -28,7 +28,6 @@ public:
     {
         puncte=x;
     }
-    void set_Membri(const Jucator *);
 
     void Calculeaza_Medie(); ///calculez media jucatorilor
     void Add_Membru(const Jucator &); ///bag membru

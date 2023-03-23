@@ -5,22 +5,6 @@
 using namespace std;
 #define swap (Echipa a,Echipa b) Echipa c=Echipa a; a=b; b=c;
 
-void Turneu::set_Echipe(const Echipa * Echipe1)///Setter pentru Echipe
-{
-    nr_Echipe_actual = sizeof(Echipe1) / sizeof(Echipe1[0]);
-    Echipe=new Echipa[nr_Echipe_actual];
-    for(int i=0; i<nr_Echipe_actual; ++i)
-        Echipe[i]=Echipe1[i];
-}
-
-void Turneu::set_Runde(const Runda * Runde1)
-{
-    nr_Runde=sizeof(*Runde1)/ sizeof(Runde1[0]);
-    Runde=new Runda[nr_Runde];
-    for(int i=0; i<nr_Runde; ++i)
-        Runde[i]=Runde1[i];
-}
-
 Turneu::Turneu(int nr_Echipe_actual1,int nr_Maxim_Echipe1,int premiu_Total1,int taxa_Participare1,int nr_Runde1,const char nume_Turneu1[30],Echipa * Echipe1,Runda * Runde1)///constructor cu parametri impliciti
 {
     nr_Echipe_actual=nr_Echipe_actual1;

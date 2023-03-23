@@ -12,7 +12,6 @@ private:
 public:
     void set_nr_Meciuri(const int nr_meci){nr_Meciuri=nr_meci;}
     void set_nr_Runda(const int nr_rud){nr_Runda=nr_rud;}
-    void set_Meciuri(const Meci *);
 
     const int get_nr_Meciuri()const{return nr_Meciuri;}
     const int get_nr_Runda()const{return nr_Runda;}

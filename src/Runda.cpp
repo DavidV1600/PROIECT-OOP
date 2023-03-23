@@ -4,13 +4,6 @@
 #include "Runda.h"
 using namespace std;
 
-void Runda::set_Meciuri(const Meci * Gicu)///Setter pentru Meciuri
-{
-    nr_Meciuri = sizeof(Gicu) / sizeof(Gicu[0]);
-    Meciuri= new Meci[nr_Meciuri];
-    for(int i=0;i<nr_Meciuri;++i)
-        Meciuri[i]=Gicu[i];
-}
 
 Runda::Runda(Meci * Meciuri1,int runda1,int nr_Meciuri1)///Constructor cu parametri impliciti
 {

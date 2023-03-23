@@ -5,15 +5,7 @@
 using namespace std;
 
 
-void Echipa::set_Membri(const Jucator * Lista_Jucatori)
-{
-    numar_membri = sizeof(Lista_Jucatori) / sizeof(Lista_Jucatori[0]);  ///Gasesc marimea listei de jucatori
-    Membri=new Jucator[numar_membri];
-    for(int i=0; i<numar_membri; ++i)
-        Membri[i]=Lista_Jucatori[i];
-    Calculeaza_Medie();
 
-}
 
 Echipa::Echipa(const char nume_1[],int nr_membri,int echipa_elo,Jucator *Membru,int puncte1) ///Constructorul
 {
