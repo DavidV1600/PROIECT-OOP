@@ -1,25 +1,25 @@
 # depslib dependency file v1.0
-1679428462 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1679829024 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Turneu.h"
 
-1679571522 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1679575122 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Jucator.h"
 	<cstring>
 
-1679571519 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+1679575119 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 
-1679573440 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1679838626 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 
-1679573438 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+1679832119 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
 	"Jucator.h"
 	<cstring>
 
@@ -41,33 +41,33 @@
 	"Jucator.h"
 	<cstring>
 
-1679572097 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1679840479 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Turneu.h"
 
-1679573544 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1679831895 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
 	"Runda.h"
 	<cstring>
 
-1679427802 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
+1679839821 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Meci.h"
 
-1679570080 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
+1679839784 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
 	"Echipa.h"
 	<cstring>
 
-1679573468 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+1679840237 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Runda.h"
 
-1679573468 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
+1679837995 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
 

@@ -142,11 +142,11 @@ Turneu & Turneu::operator=(const Turneu & Gicu)///redefinire operatorul =
 ostream & operator<<(ostream & out,Turneu & Gicu)///redefinire operator << (Afisare Turneu)
 {
     Gicu.Sortare_Echipe_Inaintea_Rundei();
-    out<<"Nume Turneu: "<<Gicu.nume_Turneu<<'\n';
-    out<<"Lista de start:\n";
+    out<<"Clasament:\n";
     int i;
     for(i=0; i<Gicu.nr_Echipe_actual; ++i)
-        out<<i+1<<".) "<<Gicu.Echipe[i].get_Nume()<<"  Elo: "<<Gicu.Echipe[i].get_Elo_Echipa()<<'\n';
+        out<<i+1<<".) "<<Gicu.Echipe[i].get_Nume()<<"  Puncte: "<<Gicu.Echipe[i].get_Puncte()<<" Elo: "<<Gicu.Echipe[i].get_Elo_Echipa()<<'\n';
+        out<<'\n';
     return out;
 }
 
@@ -163,10 +163,13 @@ istream & operator>>(istream & in,Turneu & Gicu)
 
 void Turneu::Incepe_Turneu()
 {
+    Runde= new Runda[nr_Runde];
+    cout<<*this;
     for(int i=0;i<nr_Runde;++i)
     {
+        cout<<"Rezultate Runda "<<i+1<<'\n';
+        Runde[i].pregateste_Runda(Echipe,nr_Echipe_actual);
         Sortare_Echipe_Inaintea_Rundei();
-        Runde[i].pregateste_Runda(Echipe);
-        cin>>Runde[i];
+        cout<<*this;
     }
 }

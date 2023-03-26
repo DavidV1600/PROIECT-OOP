@@ -12,7 +12,7 @@ private:
     int puncte;
     Jucator *Membri;
 public:
-    void set_Nume(char text[])
+    void set_Nume(const char text[])
     {
         strcpy(nume,text);
     }
@@ -34,7 +34,7 @@ public:
     void Sterge_Jucator(const Jucator& jucatorDeSters);
     void Citire_Nume_Echipa()
     {
-        cout<<"Introdu Numele Echipei: ";
+        cout<<"Introdu Numele Urmatoarei Echipei: ";
         cin.getline(nume,20);
     }
 

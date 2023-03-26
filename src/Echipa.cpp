@@ -118,7 +118,7 @@ Echipa& Echipa::operator=(const Echipa& Gicu) ///Operatorul de =
 ostream & operator<<(ostream & out,Echipa & Gicu)///Afisare
 {
     Gicu.Calculeaza_Medie();
-    out<<"Nume Echipa: "<<Gicu.nume<<'\n'<<"Elo Echipa: "<<Gicu.elo_echipa<<'\n'<<"Numar Membri: "<<Gicu.numar_membri<<'\n'<<"Membri: ";
+    out<<"Nume Echipa: "<<Gicu.nume<<'\n'<<"Puncte: "<<Gicu.get_Puncte()<<'\n'<<"Elo Echipa: "<<Gicu.elo_echipa<<'\n'<<"Numar Membri: "<<Gicu.numar_membri<<'\n'<<"Membri: ";
     int i;
     for(i=0; i<Gicu.numar_membri-1; ++i)
         out<<Gicu.Membri[i].get_Nume()<<", ";

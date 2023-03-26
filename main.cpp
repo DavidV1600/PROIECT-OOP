@@ -6,7 +6,7 @@ ifstream fin("poo.in");
 
 int main()
 {
-    Turneu T;
+ /*   Turneu T;
     cin>>T;
     int nr_Echipe;
     int nr_Jucatori;
@@ -34,32 +34,30 @@ int main()
 
     }
     cout<<T;
-
-
-    /*Jucator a("07434983","Bita","Ghita",10,false,2058);
-    Jucator b("38749993","Ionescu","Lucian",13,true,1895);
-    Jucator c("293849843","Kopacu","Mihai",15,true,3895);
-    Echipa sper,fier;
+    T.Incepe_Turneu();
+*/
+    Jucator a("07434983","Sper","Ghita",10,false,2058);
+    Jucator b("38749993","FierSper","Lucian",13,true,1895);
+    Jucator c("293849843","Ler","Mihai",15,true,3895);
+    Jucator d("293849843","FierMer","Andrei",15,false,1235);
+    Echipa sper,fier,ler,mer;
     sper.Add_Membru(a);
     fier.Add_Membru(b);
-    fier.Add_Membru(c);
-    cout<<sper;
+    ler.Add_Membru(c);
+    mer.Add_Membru(d);
     sper.Add_Membru(b);
-    sper.set_Nume("EchipaBomba");
-    fier.set_Nume("SusraGalactica");
-    cout<<sper;
+    fier.Add_Membru(d);
+    sper.set_Nume("Echipa sper");
+    fier.set_Nume("Echipa fier");
+    ler.set_Nume("Echipa ler");
+    mer.set_Nume("Echipa mer");
     Turneu t1;
     t1.add_Echipa(sper);
     t1.add_Echipa(fier);
-    cout<<t1;
-    t1.sterge_Echipa(fier);
-    cout<<t1;
-    Meci m(sper,fier);
-    cout<<m;
-    Runda r1;
-    r1.add_Meci(m);
-    cout<<r1;*/
-
+    t1.add_Echipa(ler);
+    t1.add_Echipa(mer);
+    t1.set_nr_Runde(2);
+    t1.Incepe_Turneu();
 
     return 0;
 }
