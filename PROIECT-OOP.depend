@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1679829024 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1679861430 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Turneu.h"
@@ -13,13 +13,13 @@
 
 1679575119 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 
-1679838626 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1679861613 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Echipa.h"
 
-1679832119 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+1679861613 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
 	"Jucator.h"
 	<cstring>
 
@@ -41,13 +41,13 @@
 	"Jucator.h"
 	<cstring>
 
-1679840479 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1679861713 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Turneu.h"
 
-1679831895 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1679861725 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
 	"Runda.h"
 	<cstring>
@@ -58,7 +58,7 @@
 	<bits/stdc++.h>
 	"Meci.h"
 
-1679839784 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
+1679841019 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
 	"Echipa.h"
 	<cstring>
 

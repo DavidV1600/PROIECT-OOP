@@ -3,7 +3,6 @@
 #include <bits/stdc++.h>
 #include "Turneu.h"
 using namespace std;
-#define swap (Echipa a,Echipa b) Echipa c=Echipa a; a=b; b=c;
 
 Turneu::Turneu(int nr_Echipe_actual1,int nr_Maxim_Echipe1,int premiu_Total1,int taxa_Participare1,int nr_Runde1,const char nume_Turneu1[30],Echipa * Echipe1,Runda * Runde1)///constructor cu parametri impliciti
 {
@@ -101,7 +100,7 @@ void Turneu::Sortare_Echipe_Inaintea_Rundei()///functie sortare dupa puncte acum
                 Echipe[i]=Echipe[j];
                 Echipe[j]=temp;
             }
-            else if(Echipe[i].get_Puncte()==Echipe[i].get_Puncte() && Echipe[i].get_Elo_Echipa()<Echipe[j].get_Elo_Echipa()){
+            else if(Echipe[i].get_Puncte()==Echipe[j].get_Puncte() && Echipe[i].get_Elo_Echipa()<Echipe[j].get_Elo_Echipa()){
                 Echipa temp=Echipe[i];
                 Echipe[i]=Echipe[j];
                 Echipe[j]=temp;
@@ -143,9 +142,9 @@ ostream & operator<<(ostream & out,Turneu & Gicu)///redefinire operator << (Afis
 {
     Gicu.Sortare_Echipe_Inaintea_Rundei();
     out<<"Clasament:\n";
-    int i;
-    for(i=0; i<Gicu.nr_Echipe_actual; ++i)
+    for(int i=0; i<Gicu.nr_Echipe_actual; ++i){
         out<<i+1<<".) "<<Gicu.Echipe[i].get_Nume()<<"  Puncte: "<<Gicu.Echipe[i].get_Puncte()<<" Elo: "<<Gicu.Echipe[i].get_Elo_Echipa()<<'\n';
+            }
         out<<'\n';
     return out;
 }
@@ -169,7 +168,6 @@ void Turneu::Incepe_Turneu()
     {
         cout<<"Rezultate Runda "<<i+1<<'\n';
         Runde[i].pregateste_Runda(Echipe,nr_Echipe_actual);
-        Sortare_Echipe_Inaintea_Rundei();
         cout<<*this;
     }
 }

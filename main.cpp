@@ -6,8 +6,9 @@ ifstream fin("poo.in");
 
 int main()
 {
- /*   Turneu T;
-    cin>>T;
+
+    Turneu T;
+    cin>>T;                         ///Citesc turneu
     int nr_Echipe;
     int nr_Jucatori;
     cout<<"Introdu Numar Echipe: ";
@@ -29,13 +30,12 @@ int main()
             e.Add_Membru(a);
         }
         cin.get();
-
         T.add_Echipa(e);
 
     }
-    cout<<T;
     T.Incepe_Turneu();
-*/
+
+/*
     Jucator a("07434983","Sper","Ghita",10,false,2058);
     Jucator b("38749993","FierSper","Lucian",13,true,1895);
     Jucator c("293849843","Ler","Mihai",15,true,3895);
@@ -58,6 +58,6 @@ int main()
     t1.add_Echipa(mer);
     t1.set_nr_Runde(2);
     t1.Incepe_Turneu();
-
+*/
     return 0;
 }
