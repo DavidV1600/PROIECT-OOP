@@ -1,13 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include "Turneu.h"
+#include "Jucator_Sah.h"
+#include "Jucator_Tenis.h"
 using namespace std;
 ifstream fin("poo.in");
 
 int main()
 {
-
-    Turneu T;
+    Jucator_Tenis a;
+    cin>>a;
+    cout<<a;
+    /*Turneu T;
     cin>>T;                         ///Citesc turneu
     int nr_Echipe;
     int nr_Jucatori;
@@ -34,6 +38,7 @@ int main()
 
     }
     T.Incepe_Turneu();
+    */
 
 /*
     Jucator a("07434983","Sper","Ghita",10,false,2058);

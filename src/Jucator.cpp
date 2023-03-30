@@ -123,7 +123,7 @@ ostream & operator <<(ostream &out,const Jucator & Gicu1)///redefinire operatoru
         out<<"Masculin"<<'\n';
     out<<"Elo: "<<Gicu1.elo<<'\n';
     out<<"Email: "<<Gicu1.email<<'\n';
-    out<<"Nr Telefon: "<<Gicu1.nr_Telefon<<'\n';
+    out<<"Nr Telefon: "<<Gicu1.nr_Telefon;
     return out;
 }
 
@@ -163,6 +163,5 @@ istream & operator >>(istream & in, Jucator & Gicu)///redefinire operator >> (Ci
     in>>Gicu.sex;
     cout<<"Introdu Elo: ";
     in>>Gicu.elo;
-    cout<<'\n';
     return in;
 }

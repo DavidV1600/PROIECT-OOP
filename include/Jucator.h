@@ -4,7 +4,7 @@ using namespace std;
 
 class Jucator
 {
-private:
+protected:
 
     char cnp[14];
     char nr_Telefon[11];

@@ -1,17 +1,19 @@
 # depslib dependency file v1.0
-1679861430 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1680203048 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Turneu.h"
+	"Jucator_Sah.h"
+	"Jucator_Tenis.h"
 
-1679575122 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1680199429 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<bits/stdc++.h>
 	"Jucator.h"
 	<cstring>
 
-1679575119 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+1680184250 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 
 1679861613 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
@@ -70,4 +72,17 @@
 
 1679837995 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
+
+1680199479 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah.cpp
+	<iostream>
+	<fstream>
+	<bits/stdc++.h>
+	"Jucator_Sah.h"
+
+1680199248 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
+	<Jucator.h>
+
+1680203083 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_tenis.h
+	"Jucator.h"
+	<cstring>
 
