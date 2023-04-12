@@ -20,8 +20,8 @@ public:
 	const int get_Inaltime() { return inaltime; }
 	const char* get_club_Sportiv() { return club_Sportiv; }
 
-	Jucator_Tenis(const bool mana = 0, const int inalt = 0, const char text[] = "Unknown");
-	Jucator_Tenis(Jucator_Tenis&);
+	Jucator_Tenis(const bool mana = 0, const int inalt = 0,  const char text[] = "Unknown");
+	Jucator_Tenis(const Jucator_Tenis&);
 	Jucator_Tenis& operator=(const Jucator_Tenis&);
 
 	friend istream& operator>>(istream&, Jucator_Tenis&);

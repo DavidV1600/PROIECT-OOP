@@ -12,7 +12,7 @@ Meci::Meci(Echipa *Echipa1,Echipa *Echipa2,int scor1,int scor2,bool rezultat_fin
     scor_2=scor2;
     rezultat_final=rezultat_final;
 }
-Meci::Meci(Meci & Gicu)///constructor de copiere
+Meci::Meci(const Meci & Gicu)///constructor de copiere
 {
     Echipa_1=Gicu.Echipa_1;
     Echipa_2=Gicu.Echipa_2;

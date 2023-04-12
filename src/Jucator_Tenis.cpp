@@ -3,15 +3,12 @@
 #include "Jucator_Tenis.h"
 using namespace std;
 
-Jucator_Tenis::Jucator_Tenis(const bool mana, const int inalt, const char text[]):Jucator()
+Jucator_Tenis::Jucator_Tenis(const bool mana, const int inalt,const char text[]):Jucator(),mana_Dominanta(mana),inaltime(inalt)
 {
-	mana_Dominanta = mana;
-	inaltime = inalt;
-	strcpy(club_Sportiv, text);
-
+    strcpy(club_Sportiv,text);
 }
 
-Jucator_Tenis::Jucator_Tenis(Jucator_Tenis& Gicu): Jucator(Gicu)
+Jucator_Tenis::Jucator_Tenis(const Jucator_Tenis& Gicu): Jucator(Gicu)
 {
 	mana_Dominanta = Gicu.mana_Dominanta;
 	inaltime = Gicu.inaltime;

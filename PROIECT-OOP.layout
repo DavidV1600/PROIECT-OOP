@@ -2,39 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="include\Meci.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Turneu.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="226" topLine="3" />
+			<Cursor1 position="1794" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="src\Jucator_Tenis.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="161" topLine="26" />
 		</Cursor>
 	</File>
 	<File name="src\Meci.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="659" topLine="11" />
-		</Cursor>
-	</File>
-	<File name="include\Runda.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="138" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="src\Runda.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2280" topLine="60" />
-		</Cursor>
-	</File>
-	<File name="src\Jucator.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2915" topLine="100" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="169" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Echipa.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1139" topLine="42" />
+			<Cursor1 position="193" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="poo.in" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -42,34 +22,74 @@
 			<Cursor1 position="727" topLine="47" />
 		</Cursor>
 	</File>
-	<File name="src\Turneu.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Turneu.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1569" topLine="32" />
+			<Cursor1 position="1809" topLine="60" />
 		</Cursor>
 	</File>
-	<File name="include\Turneu.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Jucator_Sah.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="672" topLine="21" />
+			<Cursor1 position="368" topLine="30" />
 		</Cursor>
 	</File>
-	<File name="include\Jucator_Sah.h" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Jucator.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="185" topLine="0" />
+			<Cursor1 position="57" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="include\Jucator_Sah.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="647" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="src\Turneu_Sah.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1123" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="include\Runda.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="547" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="src\Runda.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="645" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Jucator.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3453" topLine="54" />
 		</Cursor>
 	</File>
 	<File name="src\Echipa.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="783" topLine="21" />
+			<Cursor1 position="1895" topLine="75" />
 		</Cursor>
 	</File>
-	<File name="src\Jucator_Sah.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Turneu_Sah.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="284" topLine="0" />
+			<Cursor1 position="1501" topLine="42" />
 		</Cursor>
 	</File>
-	<File name="include\Jucator.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Jucator_Tenis.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="90" topLine="47" />
+			<Cursor1 position="681" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="include\Meci.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1088" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include\Echipa.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1385" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2490" topLine="81" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

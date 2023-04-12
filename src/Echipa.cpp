@@ -82,7 +82,7 @@ void Echipa::Sterge_Jucator(const Jucator& jucatorDeSters)
 
 
 
-Echipa::Echipa(Echipa& Gicu) ///Constructor de copiere
+Echipa::Echipa(const Echipa& Gicu) ///Constructor de copiere
 {
 
     strcpy(nume,Gicu.nume);///de ce la construcorul de copiere nu imi recomanda scriptul???

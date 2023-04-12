@@ -12,7 +12,7 @@ Runda::Runda(Meci * Meciuri1,int runda1,int nr_Meciuri1)///Constructor cu parame
     nr_Meciuri=nr_Meciuri1;
 }
 
-Runda::Runda(Runda & Gicu)///Constructor de copiere
+Runda::Runda(const Runda & Gicu)///Constructor de copiere
 {
     nr_Meciuri=Gicu.nr_Meciuri;
     nr_Runda=Gicu.nr_Runda;

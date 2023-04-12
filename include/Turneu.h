@@ -3,6 +3,7 @@
 #include "Echipa.h"
 #include "Runda.h"
 #include <cstring>
+#include <string>
 
 using namespace std;
 
@@ -79,14 +80,14 @@ public:
     }
 
     void add_Echipa(const Echipa &);
-    void sterge_Echipa(const Echipa &);
+    void sterge_Echipa(const char Gicu[]);
     void add_Runda(const Runda &);
     void sterge_Runda(const Runda &);
     void Sortare_Echipe_Inaintea_Rundei();
     void Incepe_Turneu();
 
     Turneu(int nr_Echipe_actual1=0,int nr_Maxim_Echipe1=0,int premiu_Total1=0,int taxa_Participare1=0,int nr_Runde1=0,const char nume_Turneu1[30]="",Echipa * Echipe1=nullptr,Runda *Runde1=nullptr);
-    Turneu(Turneu &);
+    Turneu(const Turneu &);
     ~Turneu();
 
     Turneu & operator=(const Turneu &);

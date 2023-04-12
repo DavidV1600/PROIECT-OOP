@@ -16,7 +16,7 @@ Turneu::Turneu(int nr_Echipe_actual1,int nr_Maxim_Echipe1,int premiu_Total1,int 
     Runde=Runde1;
 }
 
-Turneu::Turneu(Turneu & Gicu)///Constructor de copiere
+Turneu::Turneu(const Turneu & Gicu)///Constructor de copiere
 {
     nr_Echipe_actual=Gicu.nr_Echipe_actual;
     Echipe=new Echipa[nr_Echipe_actual];
@@ -57,14 +57,14 @@ void Turneu::add_Runda(const Runda & Gicu)///Functie de adaugare Runda
     Runde=temp;
 }
 
-void Turneu::sterge_Echipa(const Echipa & Gicu)///Functie de stergere Echipe
+void Turneu::sterge_Echipa(const char Gicu[])///Functie de stergere Echipe
 {
     nr_Echipe_actual--;
     Echipa * temp;
     temp = new Echipa[nr_Echipe_actual];
     int k=0;
     for(int i=0; i<=nr_Echipe_actual; ++i)
-        if(strcmp(Echipe[i].get_Nume(),Gicu.get_Nume())!=0)
+        if(strcmp(Echipe[i].get_Nume(),Gicu)!=0)
         {
             temp[k]=Echipe[i];
             k++;

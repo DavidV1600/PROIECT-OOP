@@ -29,7 +29,7 @@ public:
     const bool get_rezultat ()const{return rezultat_final;}
 
     Meci(Echipa *Echipa1=nullptr,Echipa *Echipa2=nullptr,int scor1=0,int scor2=0,bool rezultat_final=1);
-    Meci(Meci &);
+    Meci(const Meci &);
     Meci & operator=(const Meci &);
     friend ostream & operator<<(ostream &,const Meci &);
 

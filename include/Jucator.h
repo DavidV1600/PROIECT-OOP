@@ -1,5 +1,6 @@
 #ifndef JUCATOR_H
 #define JUCATOR_H
+#include <iostream>
 using namespace std;
 
 class Jucator

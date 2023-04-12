@@ -60,7 +60,7 @@ public:
     }
 
     Echipa(const char nume_1[]="",int nr_membri=0,int echipa_elo=0,Jucator *Membru=nullptr,int puncte1=0); ///CONSTRUCTOR
-    Echipa(Echipa &); ///Constructor de copiere
+    Echipa(const Echipa &); ///Constructor de copiere
     ~Echipa(); ///Destructor
 
     Echipa& operator=(const Echipa &); ///Operatorul =
