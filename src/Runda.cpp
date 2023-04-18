@@ -23,6 +23,7 @@ Runda::Runda(const Runda & Gicu)///Constructor de copiere
 
 Runda & Runda::operator=(const Runda & Gicu)///redefinire operatorul =
 {
+    if(&Gicu!=nullptr)
     if(this!=&Gicu){
     delete[]Meciuri;
     nr_Meciuri=Gicu.nr_Meciuri;
