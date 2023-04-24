@@ -7,6 +7,7 @@ void Premiu_Tenis::seteaza_Suma_per_Premiu(const int suma_Totala)
 		int suma_Acordata = 0;
 		std::cout << "Introdu suma acordata pentru locul " << i + 1 << ": ";
 		int cit;
+
 		std::cin >> cit;
 		Premii.push_back(cit);
 
@@ -20,6 +21,7 @@ void Premiu_Tenis::seteaza_Procentaj_per_Premiu(const int suma_Totala)
 		int suma_Acordata = 0;
 		std::cout << "Introdu procentaj din suma totala acordat pentru locul " << i + 1 << ": ";
 		int cit;
+
 		std::cin >> cit;
 		Premii.push_back(suma_Totala * cit / 100);
 

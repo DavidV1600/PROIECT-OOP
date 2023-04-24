@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include "Turneu_Sah.h"
+#include "Turneu_Tenis.h"
 using namespace std;
 
-Turneu_Sah::Turneu_Sah(const char data_start[], const char data_finish[],
+Turneu_Tenis::Turneu_Tenis(const char data_start[], const char data_finish[],
 	const char nume_O[], const char email_O[],
-	const char telefon_O[], const char loc[], int varsta_Max, int elo_Max, int elo_Min) :Turneu(), varsta_Maxima(varsta_Max), elo_Maxim(elo_Max), elo_Minim(elo_Min)
+	const char telefon_O[], const char loc[], int varsta_Max, int clasament_Max, int clasament_Min) :Turneu(), varsta_Maxima(varsta_Max), clasament_Maxim(clasament_Max), clasament_Minim(clasament_Min)
 {
 	strcpy(locatie, loc);
 	strcpy(data_Inceperii, data_start);
@@ -16,10 +16,10 @@ Turneu_Sah::Turneu_Sah(const char data_start[], const char data_finish[],
 
 }
 
-Turneu_Sah::Turneu_Sah(const Turneu_Sah& Gicu) : Turneu(Gicu)
+Turneu_Tenis::Turneu_Tenis(const Turneu_Tenis& Gicu) : Turneu(Gicu)
 {
-	elo_Maxim = Gicu.elo_Maxim;
-	elo_Minim = Gicu.elo_Minim;
+	clasament_Maxim = Gicu.clasament_Maxim;
+	clasament_Minim = Gicu.clasament_Minim;
 	varsta_Maxima = Gicu.varsta_Maxima;
 	strcpy(locatie, Gicu.locatie);
 	strcpy(data_Inceperii, Gicu.data_Inceperii);
@@ -30,11 +30,11 @@ Turneu_Sah::Turneu_Sah(const Turneu_Sah& Gicu) : Turneu(Gicu)
 }
 
 
-Turneu_Sah& Turneu_Sah::operator=(const Turneu_Sah& Gicu)
+Turneu_Tenis& Turneu_Tenis::operator=(const Turneu_Tenis& Gicu)
 {
 	if (this != &Gicu) {
-		elo_Maxim = Gicu.elo_Maxim;
-		elo_Minim = Gicu.elo_Minim;
+		clasament_Maxim = Gicu.clasament_Maxim;
+		clasament_Minim = Gicu.clasament_Minim;
 		varsta_Maxima = Gicu.varsta_Maxima;
 		strcpy(locatie, Gicu.locatie);
 		strcpy(data_Inceperii, Gicu.data_Inceperii);
@@ -46,8 +46,8 @@ Turneu_Sah& Turneu_Sah::operator=(const Turneu_Sah& Gicu)
 	return *this;
 }
 
-void Turneu_Sah::Incepe_Turneu()
+void Turneu_Tenis::Incepe_Turneu()
 {
 	///Urmeaza sa implementez
-	std::cout << "Sunt in clasa sah cand incep turneul\n";
+	std::cout << "Sunt in clasa Tenis cand urmeaza sa implementez turneul de tenis\n";
 }

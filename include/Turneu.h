@@ -3,13 +3,13 @@
 #include "Echipa.h"
 #include "Runda.h"
 #include <cstring>
-#include <string>
 
 using namespace std;
 
 class Turneu
 {
-private:
+protected:
+    static int nr_Turnee_Create;
     int nr_Echipe_actual;
     char nume_Turneu[30];
     int taxa_Participare;
@@ -17,35 +17,42 @@ private:
     int premiu_Total;
     int nr_Maxim_Echipe;
     int nr_Runde;
-    Echipa *Echipe;
-    Runda *Runde;
+    Echipa* Echipe;
+    Runda* Runde;
 
 public:
+    void static set_nr_Turnee_Create(const int nr)
+    {
+        nr_Turnee_Create = nr;
+    }
     void set_nr_Echipe_actual(const int nr)
     {
-        nr_Echipe_actual=nr;
+        nr_Echipe_actual = nr;
     }
     void set_nume_Turneu(const char text[])
     {
-        strcpy(nume_Turneu,text);
+        strcpy_s(nume_Turneu, text);
     }
     void set_taxa_Participare(const int taxa)
     {
-        taxa_Participare=taxa;                                             ///SETTERI
+        taxa_Participare = taxa;                                             ///SETTERI
     }
     void set_premiu_Total(const int premiu)
     {
-        premiu_Total=premiu;
+        premiu_Total = premiu;
     }
     void set_nr_Maxim_Echipe(const int maxim_echipe)
     {
-        nr_Maxim_Echipe=maxim_echipe;
+        nr_Maxim_Echipe = maxim_echipe;
     }
     void set_nr_Runde(const int runde)
     {
-        nr_Runde=runde;
+        nr_Runde = runde;
     }
-
+    static int get_nr_Turnee_Create()
+    {
+        return nr_Turnee_Create;
+    }
     const int get_nr_Echipe_actual()const
     {
         return nr_Echipe_actual;
@@ -79,20 +86,21 @@ public:
         return nr_Runde;
     }
 
-    void add_Echipa(const Echipa &);
-    void sterge_Echipa(const char Gicu[]);
-    void add_Runda(const Runda &);
-    void sterge_Runda(const Runda &);
+    void add_Echipa(const Echipa&);
+    void sterge_Echipa(const Echipa&);
+    void add_Runda();
+    void sterge_Runda();
     void Sortare_Echipe_Inaintea_Rundei();
-    void Incepe_Turneu();
+    virtual void Incepe_Turneu();
 
-    Turneu(int nr_Echipe_actual1=0,int nr_Maxim_Echipe1=0,int premiu_Total1=0,int taxa_Participare1=0,int nr_Runde1=0,const char nume_Turneu1[30]="",Echipa * Echipe1=nullptr,Runda *Runde1=nullptr);
-    Turneu(const Turneu &);
+    Turneu(int nr_Echipe_actual1 = 0, int nr_Maxim_Echipe1 = 0, int premiu_Total1 = 0, int taxa_Participare1 = 0, int nr_Runde1 = 0, const char nume_Turneu1[30] = "", Echipa* Echipe1 = nullptr, Runda* Runde1 = nullptr);
+    Turneu(const Turneu&);
     ~Turneu();
 
-    Turneu & operator=(const Turneu &);
-    friend ostream & operator<<(ostream &,Turneu &);
-    friend istream & operator>>(istream &,Turneu &);
+    Turneu& operator=(const Turneu&);
+    friend ostream& operator<<(ostream&, Turneu&);
+    friend istream& operator>>(istream&, Turneu&);
 };
 
 #endif // TURNEU_H
+

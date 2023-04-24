@@ -1,7 +1,7 @@
 #pragma once
 class Premiu
 {
-protected:
+public:
 	virtual void set_nr_Premianti(const int nr) = 0;
 	virtual void set_nr_Premi(const int nr) = 0;
 	virtual const int get_nr_Premianti()const  = 0;

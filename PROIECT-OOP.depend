@@ -1,36 +1,38 @@
 # depslib dependency file v1.0
-1681327971 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1682346663 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Turneu.h"
 	"Jucator_Sah.h"
 	"Jucator_Tenis.h"
 	"Turneu_Sah.h"
+	"Turneu_Tenis.h"
 	"Premiu_Sah.h"
 	"Premiu_Tenis.h"
 	<exception>
 	<stdexcept>
-	<string>
+	<memory>
 
-1680199429 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1682346679 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
-	<bits/stdc++.h>
+	<exception>
 	"Jucator.h"
 	<cstring>
 
-1680539652 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+1682346736 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+	<exception>
 	<iostream>
 
-1680540560 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
-	<bits/stdc++.h>
 	"Echipa.h"
 
-1680540560 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\echipa.h
 	"Jucator.h"
 	<cstring>
+	<iostream>
 
 1678967489 source:c:\users\maria\desktop\probleme\proiect-oop\bag tot aci\main.cpp
 	<iostream>
@@ -50,79 +52,120 @@
 	"Jucator.h"
 	<cstring>
 
-1681327770 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
-	<bits/stdc++.h>
 	"Turneu.h"
 
-1681327770 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
 	"Runda.h"
 	<cstring>
-	<string>
 
-1680540560 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci.cpp
 	<iostream>
 	<fstream>
-	<bits/stdc++.h>
 	"Meci.h"
 
-1680540560 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\meci.h
 	"Echipa.h"
 	<cstring>
 
-1680540560 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
 	<iostream>
 	<fstream>
-	<bits/stdc++.h>
 	"Runda.h"
 
-1680540560 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
 
-1680539527 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah.cpp
 	<iostream>
 	<fstream>
 	"Jucator_Sah.h"
 
-1680540585 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
+1682346700 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
 	"Jucator.h"
 	<cstring>
 
-1680540603 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_tenis.h
+1682349591 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_tenis.h
 	"Jucator.h"
 	<cstring>
 
-1680540610 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_tenis.cpp
+1682349578 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_tenis.cpp
 	<iostream>
 	<fstream>
 	"Jucator_Tenis.h"
 
-1680540927 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_sah.cpp
+1682346918 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_sah.cpp
 	<iostream>
 	<fstream>
 	"Turneu_Sah.h"
 
-1680540116 c:\users\maria\desktop\probleme\proiect-oop\include\turneu_sah.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\turneu_sah.h
 	"Turneu.h"
 	<cstring>
 
-1681324538 source:c:\users\maria\desktop\probleme\proiect-oop\src\premiu_sah.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\premiu_sah.cpp
 	"Premiu_Sah.h"
 	<iostream>
 
-1681324547 c:\users\maria\desktop\probleme\proiect-oop\include\premiu_sah.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\premiu_sah.h
 	"Premiu.h"
 	<vector>
 
-1681324509 c:\users\maria\desktop\probleme\proiect-oop\include\premiu.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\premiu.h
 
-1681324581 source:c:\users\maria\desktop\probleme\proiect-oop\src\premiu_tenis.cpp
+1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\premiu_tenis.cpp
 	"Premiu_Tenis.h"
 	<iostream>
 
-1681324572 c:\users\maria\desktop\probleme\proiect-oop\include\premiu_tenis.h
+1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\premiu_tenis.h
 	"Premiu.h"
 	<vector>
+
+1682350244 c:\users\maria\desktop\probleme\proiect-oop\include\turneu_tenis.h
+	"Turneu.h"
+	<cstring>
+
+1682350244 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_tenis.cpp
+	<iostream>
+	<fstream>
+	"Turneu_Tenis.h"
+
+1682347188 source:c:\users\maria\desktop\probleme\proiect-oop\src\istoric_jucator.cpp
+	"Istoric_Jucator.h"
+
+1682347188 c:\users\maria\desktop\probleme\proiect-oop\include\istoric_jucator.h
+	<vector>
+	"Jucator.h"
+
+1682347120 source:c:\users\maria\desktop\probleme\proiect-oop\src\istoric_jucator_tenis.cpp
+	"Istoric_Jucator_Tenis.h"
+	<iostream>
+
+1682347120 c:\users\maria\desktop\probleme\proiect-oop\include\istoric_jucator_tenis.h
+	"Istoric_Jucator.h"
+
+1682347224 source:c:\users\maria\desktop\probleme\proiect-oop\src\istoric_jucator_sah.cpp
+	"Istoric_Jucator_Sah.h"
+	<iostream>
+
+1682347225 c:\users\maria\desktop\probleme\proiect-oop\include\istoric_jucator_sah.h
+	"Istoric_Jucator.h"
+
+1682349496 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci_sah.cpp
+	"Meci_Sah.h"
+
+1682349496 c:\users\maria\desktop\probleme\proiect-oop\include\meci_sah.h
+	"Meci.h"
+	"Jucator_Sah.h"
+
+1682349531 source:c:\users\maria\desktop\probleme\proiect-oop\src\meci_tenis.cpp
+	"Meci_Tenis.h"
+
+1682349531 c:\users\maria\desktop\probleme\proiect-oop\include\meci_tenis.h
+	"Meci.h"
+	"Jucator_Tenis.h"
+	<cstring>
 

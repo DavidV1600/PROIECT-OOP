@@ -7,7 +7,7 @@ using namespace std;
 
 class Jucator_Sah : public Jucator
 {
-private:
+protected:
     int elo_National;
     int elo_International;
     int elo_Online;
@@ -20,7 +20,7 @@ public:
     void set_elo_Online(const int elo) { elo_Online = elo; }
     void set_Titlu(const char t[]) { strcpy(titlu, t); }
     void set_club_Sportiv(const char t[]) { strcpy(club_Sportiv, t); }
-    void set_nume_Online(const char t[]) { strcpy(nume_Online, t); }
+    void set_nume_Online(const char t[]) { strcpy, nume_Online, t; }
 
     const int get_elo_National()const
     {
@@ -53,6 +53,7 @@ public:
 
     friend istream& operator >>(istream& in, Jucator_Sah& Gicu);
     friend ostream& operator <<(ostream& out, Jucator_Sah& Gicu);
+    static bool validare_Titlu(const char text[]);
 };
 
 #endif // JUCATOR_SAH_H

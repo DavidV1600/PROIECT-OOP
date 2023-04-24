@@ -35,17 +35,49 @@ Jucator_Sah& Jucator_Sah::operator=(const Jucator_Sah& Gicu)
     return *this;
 }
 
+bool Jucator_Sah::validare_Titlu(const char text[])
+{
+    int lg = strlen(text);
+    if (strcmp(text, "I") == 0 || strcmp(text, "II") == 0 || strcmp(text, "III") == 0 ||
+        strcmp(text, "IV") == 0 || strcmp(text, "CM") == 0 || strcmp(text, "FM") == 0 ||
+        strcmp(text, "IM") == 0 || strcmp(text, "GM") == 0 || strcmp(text, "WGM") == 0 ||
+        strcmp(text, "WIM") == 0 || strcmp(text, "WCM") == 0 || strcmp(text, "WFM") == 0 ||
+        strcmp(text, "NM") == 0 || strcmp(text, "WNM") == 0 || strcmp(text, "AIM") == 0)
+        return 1;
+    return 0;
+}
+
 istream& operator >>(istream& in, Jucator_Sah& Gicu)
 {
     in >> static_cast<Jucator&>(Gicu);
-    cout << "Introdu elo-International: ";
-    in >> Gicu.elo_International;
-    cout << "Introdu elo-National: ";
-    in >> Gicu.elo_National;
-    cout << "Introdu elo-Online: ";
-    in >> Gicu.elo_Online;
-    cout << "Introdu Titlu: ";
-    in >> Gicu.titlu;
+    do {
+        cout << "Introdu elo-International: ";///nus daca sa pun si aci:
+        in >> Gicu.elo_International;
+        if (Gicu.elo_International < 0 || Gicu.elo_International>3200)
+            cout << "Introducere invalida!\n";
+        else break;
+    } while (true);
+    do {
+        cout << "Introdu elo-National: ";
+        in >> Gicu.elo_National;
+        if (Gicu.elo_National < 0 || Gicu.elo_National>3200)
+            cout << "Introducere invalida!\n";
+        else break;
+    } while (true);
+    do {
+        cout << "Introdu elo-Online: ";
+        in >> Gicu.elo_Online;
+        if (Gicu.elo_Online < 0 || Gicu.elo_Online>4000)
+            cout << "Introducere invalida!\n";
+        else break;
+    } while (true);
+    do {
+        cout << "Introdu Titlu: ";
+        in >> Gicu.titlu;
+        if (Jucator_Sah::validare_Titlu(Gicu.titlu) == 0)
+            cout << "Introducere invalida!\n";
+        else break;
+    } while (true);
     cout << "Introdu Club Sportiv: ";
     in >> Gicu.club_Sportiv;
     cout << "Introdu Username Online: ";

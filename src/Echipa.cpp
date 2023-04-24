@@ -1,55 +1,60 @@
 #include <iostream>
 #include <fstream>
-#include <bits/stdc++.h>
 #include "Echipa.h"
 using namespace std;
 
 
 
 
-Echipa::Echipa(const char nume_1[],int nr_membri,int echipa_elo,Jucator *Membru,int puncte1) ///Constructorul
+Echipa::Echipa(const char nume_1[], int nr_membri, int echipa_elo, Jucator* Membru, int puncte1) ///Constructorul
 {
-    strcpy(nume,nume_1);
-    numar_membri=nr_membri;
-    elo_echipa=echipa_elo;
-    puncte=puncte1;
-    Membri=Membru;
+    strcpy(nume, nume_1);
+    numar_membri = nr_membri;
+    elo_echipa = echipa_elo;
+    puncte = puncte1;
+    Membri = Membru;
 }
 
 void Echipa::Calculeaza_Medie() ///Calculez Media
 {
-    int suma=0;
-    if (numar_membri!=0)
+    int suma = 0;
+    if (numar_membri != 0)
     {
-        for(int i=0; i<numar_membri; ++i)
-            suma+=Membri[i].get_Elo();
-        elo_echipa=suma/numar_membri;
+        for (int i = 0; i < numar_membri; ++i)
+            suma += Membri[i].get_Elo();
+        elo_echipa = suma / numar_membri;
     }
 }
 
-void Echipa::Add_Membru(const Jucator & Gicu) ///Adaug Membru
+void Echipa::Add_Membru(const Jucator& Gicu) ///Adaug Membru
 {
-    numar_membri++;
-    Jucator * temp;
-    temp=new Jucator[numar_membri];
-    for(int i=0; i<numar_membri-1; ++i)
-        temp[i]=Membri[i];
-    temp[numar_membri-1]=Gicu;            ///Salvez in variabla temporara ca nus sa dau realoc
-    delete[]Membri;
-    Membri =temp;
+    try {
+        numar_membri++;
+        Jucator* temp;
+        temp = new Jucator[numar_membri];
+        for (int i = 0; i < numar_membri - 1; ++i)
+            temp[i] = Membri[i];
+        temp[numar_membri - 1] = Gicu;            ///Salvez in variabla temporara ca nus sa dau realoc
+        delete[]Membri;
+        Membri = temp;
+    }
+    catch (bad_alloc& e)
+    {
+        cerr << "Alocare de memorie invalida:" << e.what() << '\n';
+    }
     Calculeaza_Medie();
 }
 
 void Echipa::Sterge_Jucator(const Jucator& jucatorDeSters)
 {
 
-    const char *prim=jucatorDeSters.get_Cnp();
+    const char* prim = jucatorDeSters.get_Cnp();
     int pozitieDeSters = -1;
     for (int i = 0; i < numar_membri; i++)
     {
-        const char *prim2=Membri[i].get_Cnp();
+        const char* prim2 = Membri[i].get_Cnp();
 
-        if(strcmp(prim,prim2)==0)
+        if (strcmp(prim, prim2) == 0)
         {
             pozitieDeSters = i;
             break;
@@ -82,21 +87,27 @@ void Echipa::Sterge_Jucator(const Jucator& jucatorDeSters)
 
 
 
-Echipa::Echipa(const Echipa& Gicu) ///Constructor de copiere
+Echipa::Echipa(Echipa& Gicu) ///Constructor de copiere
 {
 
-    strcpy(nume,Gicu.nume);///de ce la construcorul de copiere nu imi recomanda scriptul???
-    numar_membri=Gicu.numar_membri;
-    puncte=Gicu.puncte;
-    elo_echipa=Gicu.elo_echipa;
-    Membri=new Jucator[numar_membri];
-    for(int i=0; i<numar_membri; ++i)
-        Membri[i]=Gicu.Membri[i];
+    strcpy(nume, Gicu.nume);///de ce la construcorul de copiere nu imi recomanda scriptul???
+    numar_membri = Gicu.numar_membri;
+    puncte = Gicu.puncte;
+    elo_echipa = Gicu.elo_echipa;
+    try {
+        Membri = new Jucator[numar_membri];
+    }
+    catch (bad_alloc& e)
+    {
+        cerr << "Alocare de memorie invalida: " << e.what() << '\n';
+    }
+    for (int i = 0; i < numar_membri; ++i)
+        Membri[i] = Gicu.Membri[i];
 }
 
 Echipa::~Echipa()
 {
-    delete []Membri;
+    delete[]Membri;
 }
 
 Echipa& Echipa::operator=(const Echipa& Gicu) ///Operatorul de =
@@ -106,41 +117,53 @@ Echipa& Echipa::operator=(const Echipa& Gicu) ///Operatorul de =
         delete[] Membri; // sterg valoarea veche
         numar_membri = Gicu.numar_membri;
         elo_echipa = Gicu.elo_echipa;
-        puncte=Gicu.puncte;
-        strcpy(nume,Gicu.nume);
-        Membri = new Jucator[numar_membri];
+        puncte = Gicu.puncte;
+        strcpy(nume, Gicu.nume);
+        try {
+            Membri = new Jucator[numar_membri];
+        }
+        catch (bad_alloc& e)
+        {
+            cerr << "Alocare de memorie invalida: " << e.what()<<'\n';
+        }
         for (int i = 0; i < numar_membri; ++i)
             Membri[i] = Gicu.Membri[i];
     }
     return *this;
 }
 
-ostream & operator<<(ostream & out,Echipa & Gicu)///Afisare
+ostream& operator<<(ostream& out, Echipa& Gicu)///Afisare
 {
     Gicu.Calculeaza_Medie();
-    out<<"Nume Echipa: "<<Gicu.nume<<'\n'<<"Puncte: "<<Gicu.get_Puncte()<<'\n'<<"Elo Echipa: "<<Gicu.elo_echipa<<'\n'<<"Numar Membri: "<<Gicu.numar_membri<<'\n'<<"Membri: ";
+    out << "Nume Echipa: " << Gicu.nume << '\n' << "Puncte: " << Gicu.get_Puncte() << '\n' << "Elo Echipa: " << Gicu.elo_echipa << '\n' << "Numar Membri: " << Gicu.numar_membri << '\n' << "Membri: ";
     int i;
-    for(i=0; i<Gicu.numar_membri-1; ++i)
-        out<<Gicu.Membri[i].get_Nume()<<", ";
-    out<<Gicu.Membri[i].get_Nume();
-    out<<'\n'<<'\n';
+    for (i = 0; i < Gicu.numar_membri - 1; ++i)
+        out << Gicu.Membri[i].get_Nume() << ", ";
+    out << Gicu.Membri[i].get_Nume();
+    out << '\n' << '\n';
     return out;
 }
 
-istream & operator>>(istream & in,Echipa & Gicu)///Citire
+istream& operator>>(istream& in, Echipa& Gicu)///Citire
 {
-    cout<<"Introdu Nume Echipa: ";
-    in>>Gicu.nume;
-    cout<<"Introdu Numarul de Membri: ";
-    in>>Gicu.numar_membri;
+    cout << "Introdu Nume Echipa: ";
+    in >> Gicu.nume;
+    cout << "Introdu Numarul de Membri: ";
+    in >> Gicu.numar_membri;
     in.get();
-
-    Gicu.Membri=new Jucator[Gicu.numar_membri];
-    for(int i=0; i<Gicu.numar_membri; ++i)
-    {
-        cout<<'\n'<<"Membrul "<<i+1<<":\n";
-        in>>Gicu.Membri[i];
+    try {
+        Gicu.Membri = new Jucator[Gicu.numar_membri];
     }
-    cout<<'\n';
+    catch (bad_alloc& e)
+    {
+        cerr << "Alocare de memorie invalida: " << e.what() << '\n';
+    }
+    for (int i = 0; i < Gicu.numar_membri; ++i)
+    {
+        cout << '\n' << "Membrul " << i + 1 << ":\n";
+        in >> Gicu.Membri[i];
+    }
+    cout << '\n';
     return in;
 }
+
