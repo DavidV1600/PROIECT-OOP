@@ -13,10 +13,11 @@
 	<stdexcept>
 	<memory>
 
-1682346679 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1682445357 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<exception>
+	"Exceptie_Custom.h"
 	"Jucator.h"
 	<cstring>
 
@@ -24,7 +25,7 @@
 	<exception>
 	<iostream>
 
-1682346611 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1682445357 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	"Echipa.h"
@@ -168,4 +169,8 @@
 	"Meci.h"
 	"Jucator_Tenis.h"
 	<cstring>
+
+1682445357 c:\users\maria\desktop\probleme\proiect-oop\include\exceptie_custom.h
+	<exception>
+	<string>
 

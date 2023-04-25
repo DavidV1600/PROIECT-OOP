@@ -22,7 +22,13 @@ void Echipa::Calculeaza_Medie() ///Calculez Media
     {
         for (int i = 0; i < numar_membri; ++i)
             suma += Membri[i].get_Elo();
-        elo_echipa = suma / numar_membri;
+        try {
+            elo_echipa = suma / numar_membri;
+        }
+        catch (exception& e)
+        {
+            throw("Nu poti Imparti la 0!\n");
+        }
     }
 }
 

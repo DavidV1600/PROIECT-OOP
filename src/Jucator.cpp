@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <exception>
+#include "Exceptie_Custom.h"
 #include "Jucator.h"
 #include <cstring>
 using namespace std;
@@ -23,20 +24,50 @@ void Jucator::set_Prenume(const char text[]) ///definire setter prenume
 }
 void Jucator::set_Varsta(const int a) ///definire setter Varsta
 {
-    varsta = a;
+    try {
+        if (a > 100 || a < 3)
+            throw 0;
+        varsta = a;
+    }
+    catch (int i)
+    {
+        std::cerr << "Varsta Setata este invalida\n";
+    }
 }
 void Jucator::set_Elo(const int a) ///definire setter Elo
 {
-    elo = a;
+    try {
+        if (a < 0 || a>3300)
+            throw 'b';
+        elo = a;
+    }
+    catch (char b)
+    {
+        std::cerr << "Eloul setat este invalid\n";
+    }
 }
 void Jucator::set_Sex(const int a) ///definire setter Sex
 {
-    sex = a;
+    try {
+        if (a < 0 || a>1)
+            throw 1;
+        sex = a;
+    }
+    catch (int e)
+    {
+        std::cerr << "Sex setat invalid\n";
+    }
 }
 void Jucator::set_Email(const char text[])
 {
     int lg = strlen(text);
-    email = new char[lg];
+    try {
+        email = new char[lg];
+    }
+    catch (bad_alloc& e)
+    {
+        std::cerr << "Ai alocat prost veric\n";
+    }
     strcpy(email, text);  ///SA N_AM EROARE CA AM INLOCUIT FORUL CU STRCPY
 }
 void Jucator::set_NrTelefon(const char text[])
@@ -51,9 +82,15 @@ Jucator::Jucator(const char cnp_1[], const char nume_1[], const char prenume_1[]
     int lg_email = strlen(email1);
     strcpy(cnp, cnp_1);
     strcpy(nr_Telefon, nr_Telefon1);
-    nume = new char[lg_nume + 1];
-    prenume = new char[lg_prenume + 1];
-    email = new char[lg_email + 1];
+    try {
+        nume = new char[lg_nume + 1];
+        prenume = new char[lg_prenume + 1];
+        email = new char[lg_email + 1];
+    }
+    catch (bad_alloc& e)
+    {
+        std::cerr << "Prea muta memorie folosita!\n";
+    }
     strcpy(nume, nume_1);
     strcpy(prenume, prenume_1);
     strcpy(email, email1);
