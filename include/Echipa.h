@@ -2,7 +2,9 @@
 #define ECHIPA_H
 #include "Jucator.h"
 #include <cstring>
+#include <vector>
 #include <iostream>
+#include <memory>
 using namespace std;
 class Echipa
 {
@@ -11,7 +13,10 @@ private:
     int numar_membri;
     int elo_echipa;
     int puncte;
-    Jucator* Membri;
+    int tip_Echipa;
+    Jucator* Membri;///tre sa fac vector de pointeri catre jucator
+    vector<std::shared_ptr<Jucator>>Membrii;
+
 public:
     void set_Nume(const char text[])
     {
@@ -55,12 +60,17 @@ public:
     {
         return Membri;
     }
+    const vector<std::shared_ptr<Jucator>> get_Membrii()const
+    {
+        return Membrii;
+    }
     const int get_Puncte()const
     {
         return puncte;
     }
 
-    Echipa(const char nume_1[] = "", int nr_membri = 0, int echipa_elo = 0, Jucator* Membru = nullptr, int puncte1 = 0); ///CONSTRUCTOR
+    Echipa(const char nume_1[] = "", int nr_membri = 0, int echipa_elo = 0, Jucator* Membru = nullptr, int puncte1 = 0,int tip_Echipa1=0); ///CONSTRUCTOR
+    Echipa(int tip);
     Echipa(Echipa&); ///Constructor de copiere
     ~Echipa(); ///Destructor
 

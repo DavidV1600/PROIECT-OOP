@@ -35,6 +35,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Echipa.h" />
+		<Unit filename="include/Exceptie_Custom.h" />
 		<Unit filename="include/Istoric_Jucator.h" />
 		<Unit filename="include/Istoric_Jucator_Sah.h" />
 		<Unit filename="include/Istoric_Jucator_Tenis.h" />
@@ -54,6 +55,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="poo.in" />
 		<Unit filename="src/Echipa.cpp" />
+		<Unit filename="src/Exceptie_Custom.cpp" />
 		<Unit filename="src/Istoric_Jucator.cpp" />
 		<Unit filename="src/Istoric_Jucator_Sah.cpp" />
 		<Unit filename="src/Istoric_Jucator_Tenis.cpp" />

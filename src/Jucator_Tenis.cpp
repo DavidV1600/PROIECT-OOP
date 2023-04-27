@@ -58,3 +58,10 @@ ostream& operator<<(ostream& out,Jucator_Tenis& Gicu)
 	out << "Clubul Sportiv: " << Gicu.club_Sportiv<<'\n';
 	return out;
 }
+
+void Jucator_Tenis::Citire_Jucator(istream& in)
+{
+	cout << "Sunt la jucator tenis\n";
+	this->Jucator::Citire_Jucator(in);///ACI E DUBIOS AR TREBUI SA PUN CITIREA DE LA TENIS
+
+}

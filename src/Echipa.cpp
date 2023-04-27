@@ -1,18 +1,32 @@
 #include <iostream>
 #include <fstream>
 #include "Echipa.h"
+#include "Jucator_Sah.h"
+#include "Jucator_Tenis.h"
+#include <memory>
 using namespace std;
 
 
 
 
-Echipa::Echipa(const char nume_1[], int nr_membri, int echipa_elo, Jucator* Membru, int puncte1) ///Constructorul
+Echipa::Echipa(const char nume_1[], int nr_membri, int echipa_elo, Jucator* Membru, int puncte1,int tip_Echipa1) ///Constructorul
 {
     strcpy(nume, nume_1);
     numar_membri = nr_membri;
     elo_echipa = echipa_elo;
     puncte = puncte1;
     Membri = Membru;
+    tip_Echipa = tip_Echipa1;
+}
+
+Echipa::Echipa(int tip)
+{
+    strcpy(nume, "");
+    numar_membri = 0;
+    elo_echipa = 0;
+    puncte = 0;
+    Membri = nullptr;
+    tip_Echipa = tip;
 }
 
 void Echipa::Calculeaza_Medie() ///Calculez Media
@@ -21,7 +35,7 @@ void Echipa::Calculeaza_Medie() ///Calculez Media
     if (numar_membri != 0)
     {
         for (int i = 0; i < numar_membri; ++i)
-            suma += Membri[i].get_Elo();
+            suma += Membri[i].get_Elo();///SA MODIFIC MEMBRII cu 2 i
         try {
             elo_echipa = suma / numar_membri;
         }
@@ -48,6 +62,8 @@ void Echipa::Add_Membru(const Jucator& Gicu) ///Adaug Membru
     {
         cerr << "Alocare de memorie invalida:" << e.what() << '\n';
     }
+    std::shared_ptr<Jucator> p = std::make_shared<Jucator>(Membri[numar_membri - 1]);
+    Membrii.push_back(p);
     Calculeaza_Medie();
 }
 
@@ -109,6 +125,10 @@ Echipa::Echipa(Echipa& Gicu) ///Constructor de copiere
     }
     for (int i = 0; i < numar_membri; ++i)
         Membri[i] = Gicu.Membri[i];
+    for (int i = 0; i < Gicu.Membrii.size(); ++i)
+    {
+        Membrii[i] = Gicu.Membrii[i];
+    }
 }
 
 Echipa::~Echipa()
@@ -167,8 +187,27 @@ istream& operator>>(istream& in, Echipa& Gicu)///Citire
     for (int i = 0; i < Gicu.numar_membri; ++i)
     {
         cout << '\n' << "Membrul " << i + 1 << ":\n";
-        in >> Gicu.Membri[i];
+        if(Gicu.tip_Echipa==0){
+            in >> Gicu.Membri[i];
+        }
+        else if (Gicu.tip_Echipa == 1)
+        {
+            Jucator_Sah Juc;
+            in >> Juc;
+            std::shared_ptr<Jucator>Juc2 = std::make_shared<Jucator>(Juc);
+            Gicu.Membrii.push_back(Juc2);
+            Gicu.Membri[i].set_Elo(Juc.get_Elo());
+        }
+        else if (Gicu.tip_Echipa == 2)
+        {
+            Jucator_Tenis Juc;
+            in >> Juc;
+            std::shared_ptr<Jucator>Juc2 = std::make_shared<Jucator>(Juc);
+            Gicu.Membrii.push_back(Juc2);
+            Gicu.Membri[i].set_Elo(Juc.get_Elo());
+        }
     }
+    Gicu.Calculeaza_Medie();
     cout << '\n';
     return in;
 }

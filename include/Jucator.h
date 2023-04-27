@@ -73,6 +73,7 @@ public:
     static bool validare_Email(const char text[]);
     static bool validare_Prenume(const char text[]);
     static bool validare_Cnp(const char text[]);
+    virtual void Citire_Jucator(istream&);
 };
 
 #endif // JUCATOR_H

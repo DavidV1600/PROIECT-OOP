@@ -221,12 +221,18 @@ ostream& operator <<(ostream& out, const Jucator& Gicu1)///redefinire operatorul
 
 istream& operator >>(istream& in, Jucator& Gicu)///redefinire operator >> (Citire Jucator)
 {
+    Gicu.Citire_Jucator(in);
+    return in;
+}
+
+void Jucator::Citire_Jucator(istream& in)
+{
     int lg;
     char text[100];
     do {
         cout << "Introdu CNP-ul: ";
         in.getline(text, 100);
-        strcpy(Gicu.cnp, text);
+        strcpy(this->cnp, text);
         if (Jucator::validare_Cnp(text) == 0)
             cout << "Incercare invalida!\n";
         else break;
@@ -235,8 +241,8 @@ istream& operator >>(istream& in, Jucator& Gicu)///redefinire operator >> (Citir
         cout << "Introdu Nume: ";
         in.getline(text, 100);
         lg = strlen(text);
-        Gicu.nume = new char[lg + 1];
-        strcpy(Gicu.nume, text);
+        this->nume = new char[lg + 1];
+        strcpy(this->nume, text);
         if (Jucator::validare_Prenume(text) == 0)
             cout << "Introducere invalida!\n";
         else break;
@@ -248,8 +254,8 @@ istream& operator >>(istream& in, Jucator& Gicu)///redefinire operator >> (Citir
         cout << "Introdu Prenume: ";
         in.getline(text, 100);
         lg = strlen(text);
-        Gicu.prenume = new char[lg + 1];
-        strcpy(Gicu.prenume, text);
+        this->prenume = new char[lg + 1];
+        strcpy(this->prenume, text);
         if (Jucator::validare_Prenume(text) == 0)
             cout << "Introducere invalida!\n";
         else break;
@@ -261,8 +267,8 @@ istream& operator >>(istream& in, Jucator& Gicu)///redefinire operator >> (Citir
         cout << "Introdu Email: ";
         in.getline(text, 100);
         lg = strlen(text);
-        Gicu.email = new char[lg + 1];
-        strcpy(Gicu.email, text);
+        this->email = new char[lg + 1];
+        strcpy(this->email, text);
         if (Jucator::validare_Email(text) == 0)
             cout << "Introducere invalida!\n";
         else break;
@@ -271,7 +277,7 @@ istream& operator >>(istream& in, Jucator& Gicu)///redefinire operator >> (Citir
     do {
         cout << "Introdu Numar Telefon: ";
         in.getline(text, 100);
-        strcpy(Gicu.nr_Telefon, text);
+        strcpy(this->nr_Telefon, text);
         if (Jucator::validare_Nr_telefon(text) == 0)
             cout << "Introducere invalida!\n";
         else break;
@@ -279,25 +285,24 @@ istream& operator >>(istream& in, Jucator& Gicu)///redefinire operator >> (Citir
 
     do {
         cout << "Introdu Varsta: ";
-        in >> Gicu.varsta;
-        if (Gicu.varsta < 0 || Gicu.varsta > 100)
+        in >> this->varsta;
+        if (this->varsta < 0 || this->varsta > 100)
             cout << "Introducere invalida!\n";
         else break;
     } while (true);
     do {
-    cout << "Introdu Sex (0=F, 1=M): ";
-        in >> Gicu.sex;
-        if (Gicu.sex != 0 && Gicu.sex != 1)
+        cout << "Introdu Sex (0=F, 1=M): ";
+        in >> this->sex;
+        if (this->sex != 0 && this->sex != 1)
             cout << "Introducere invalida!\n";
         else break;
     } while (true);
 
     do {
         cout << "Introdu Elo: ";
-        in >> Gicu.elo;
-        if (Gicu.elo < 0 || Gicu.elo>3200)
+        in >> this->elo;
+        if (this->elo < 0 || this->elo>3200)
             cout << "Introducere invalida!\n";
         else break;
     } while (true);
-    return in;
 }

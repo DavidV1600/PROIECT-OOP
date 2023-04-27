@@ -2,7 +2,7 @@
 #include "Meci.h"
 #include "Jucator_Sah.h"
 class Meci_Sah :
-    public Meci, public Jucator_Sah
+    private Meci, private Jucator_Sah
 {
 public:
    void schimba_Diferenta_Elo_International(Meci&, Jucator_Sah&, Jucator_Sah&);

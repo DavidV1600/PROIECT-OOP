@@ -3,7 +3,7 @@
 #include "Jucator_Tenis.h"
 #include <cstring>
 class Meci_Tenis :
-    public Meci, public Jucator_Tenis
+    private Meci, private Jucator_Tenis
 {
 private:
     int nr_Seturi;

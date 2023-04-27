@@ -98,3 +98,10 @@ ostream& operator <<(ostream& out, Jucator_Sah& Gicu)
     cout << '\n';
     return out;
 }
+
+void Jucator_Sah::Citire_Jucator(istream& in)
+{
+    cout << "Sunt la jucator sah\n";
+    this->Jucator::Citire_Jucator(in);
+
+}

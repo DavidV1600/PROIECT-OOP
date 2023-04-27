@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include "Turneu.h"
 using namespace std;
 
@@ -151,15 +152,20 @@ ostream& operator<<(ostream& out, Turneu& Gicu)///redefinire operator << (Afisar
 
 istream& operator>>(istream& in, Turneu& Gicu)
 {
-    cout << "Introdu Numele Turneului: ";
-    in.getline(Gicu.nume_Turneu, 30);
-    cout << "Cate runde va avea turneul: ";
-    in >> Gicu.nr_Runde;
-    cout << "Numarul Maxim de Echipe Admis: ";
-    in >> Gicu.nr_Maxim_Echipe;
-    Gicu.nr_Echipe_actual = 0;
 
+    Gicu.Citire_Turneu(in);
     return in;
+}
+
+void Turneu::Citire_Turneu(istream& in)
+{
+    cout << "Introdu Numele Turneului: ";
+    in.getline(nume_Turneu, 30);
+    cout << "Cate runde va avea turneul: ";
+    in >> nr_Runde;
+    cout << "Numarul Maxim de Echipe Admis: ";
+    in >> nr_Maxim_Echipe;
+    nr_Echipe_actual = 0;
 }
 
 void Turneu::Incepe_Turneu()
@@ -178,3 +184,139 @@ void Turneu::Incepe_Turneu()
     }
 }
 
+void Turneu::Editare_Turneu()
+{
+    int tasta;
+    std::cout << "--------------------------------------------------------\n";
+    std::cout << "Apasa [0] pentru a te intoarce \n";
+    std::cout << "Apasa [1] pentru a adauga echipa\n";
+    std::cout << "Apasa [2] pentru a sterge echipa\n";
+    std::cout << "Apasa [3] schimba numele turneului\n";
+    std::cout << "Apasa [4] schimba taxa de participare\n";
+    std::cout << "Apasa [5] pentru a schimba premiul total\n";
+    std::cout << "Apasa [6] pentru a schimba numarul de echipe admis\n";
+    std::cout << "Apasa [7] pentru a schimba numarul de runde\n";
+    std::cout << "Apasa [8] pentru a incepe turneul\n";  ///Aci tre sa vad ce fct bag
+    std::cout << "---------------------------------------------------------\n";
+
+    std::cin >> tasta;
+    std::cin.get();
+
+    switch (tasta)
+    {
+    case 0:
+        break;
+    case 1: {
+        Echipa b;
+        std::cin >> b;
+        this->add_Echipa(b);
+        this->Editare_Turneu();
+        break;
+    }
+    case 2: {
+        this->Stergere_Echipa();///Aci trebe functie
+        this->Editare_Turneu();
+        break;
+    }
+          break;
+    case 3: {
+        char nume_nou[30];
+        std::cout << "Introdu numele nou: ";
+        std::cin >> nume_nou;
+        this->set_nume_Turneu(nume_nou);
+        this->Editare_Turneu();
+        break; }
+    case 4:
+        std::cout << "Introdu taxa de participare noua: ";
+
+        std::cin >> tasta;
+        std::cin.get();
+        this->set_taxa_Participare(tasta);
+        this->Editare_Turneu();
+        break;
+    case 5:
+        std::cout << "Introdu noul premiu total: ";
+
+        std::cin >> tasta;
+        std::cin.get();
+        this->set_premiu_Total(tasta);
+        this->Editare_Turneu();
+        break;
+    case 6:
+        std::cout << "Introdu noul nr maxim de echipe admis: ";
+
+        std::cin >> tasta;
+        std::cin.get();
+        this->set_nr_Maxim_Echipe(tasta);
+        this->Editare_Turneu();
+        break;
+    case 7:
+        std::cout << "Introdu noul nr de runde: ";
+
+        std::cin >> tasta;
+        std::cin.get();
+        this->set_nr_Runde(tasta);
+        this->Editare_Turneu();
+        break;
+    case 8:
+        this->Sortare_Echipe_Inaintea_Rundei();
+        this->Incepe_Turneu();
+        this->Editare_Turneu();
+        break;
+    default:
+        std::cout << "Introducere invalida!\n\n";
+        this->Editare_Turneu();
+        break;
+    }
+}
+
+void Turneu::Stergere_Echipa()
+{
+    int tasta;
+    std::cout << "-----------------------------------------\n";
+    std::cout << "Apasa [0] pentru a te intoarce\n";
+    for (int i = 0; i < this->get_nr_Echipe_actual(); ++i)
+    {
+        std::cout << "Apasa [" << i + 1 << "] pentru a sterge echipa: " << this->get_Echipe()[i].get_Nume() << '\n';
+
+    }
+    std::cout << "---------------------------------------------\n";
+
+    std::cin >> tasta;
+    std::cin.get();
+    if (tasta == 0)
+        this->Editare_Turneu();
+    else if (tasta > 0 && tasta <= this->get_nr_Echipe_actual())
+        this->sterge_Echipa(this->get_Echipe()[tasta - 1]);
+    else
+    {
+        std::cout << "Introducere Invalida!\n\n";
+        this->Stergere_Echipa();
+    }
+
+}
+void Alegere_Turneu(std::vector<std::shared_ptr<Turneu>>Lista_Turnee_Create)
+{
+    int tasta;
+    std::cout << "-----------------------\n";
+    std::cout << "Apasa [0] pentru a te intoarce\n";
+    for (int i = 0; i < Lista_Turnee_Create.size(); ++i)
+    {
+        std::cout << "Apasa [" << i + 1 << "] pentru a edita: " << Lista_Turnee_Create[i]->get_nume_Turneu() << '\n';
+    }
+    std::cout << "-------------------------\n";
+
+    std::cin >> tasta;
+    std::cin.get();
+    if (tasta > 0 && tasta <= Lista_Turnee_Create.size())
+    {
+        Lista_Turnee_Create[tasta - 1]->Editare_Turneu();
+    }
+    else if (tasta == 0)
+        return;
+    else
+    {
+        std::cout << "Introducere Invalida!\n\n";
+        Alegere_Turneu(Lista_Turnee_Create);
+    }
+}

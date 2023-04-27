@@ -75,5 +75,9 @@ public:
 	Turneu_Tenis& operator=(const Turneu_Tenis&);
 
 	void Incepe_Turneu();
+	void Sortare_Echipe_Inaintea_Rundei();
+	void Editare_Turneu();
+	void Citire_Turneu(istream&);
+	friend void Alegere_Turneu_Tenis(std::vector<std::shared_ptr<Turneu>>);
 };
 

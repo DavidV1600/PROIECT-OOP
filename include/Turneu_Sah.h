@@ -1,5 +1,6 @@
 #pragma once
 #include "Turneu.h"
+#include "Premiu_Sah.h"
 #include <cstring>
 class Turneu_Sah : public Turneu
 {
@@ -14,6 +15,8 @@ private:
 	int varsta_Maxima;
 	int elo_Maxim;
 	int elo_Minim;
+	Premiu_Sah *P;
+
 public:
 
 	void set_data_Inceperii(const char t[]) { strcpy(data_Inceperii, t); }
@@ -25,7 +28,8 @@ public:
 	void set_varsta_Maxima(const int t) { varsta_Maxima = t; }
 	void set_elo_Maxim(const int t) { elo_Maxim = t; }
 	void set_elo_Minim(const int t) { elo_Minim = t; }
-	void static set_nr_Turnee_Sah(const int nr) { nr_Turnee_Create = nr; }
+	void static set_nr_Turnee_Sah(const int nr) { nr_Turnee_Sah = nr; }
+	void set_Premiu_Sah(Premiu_Sah* const p1) { P = p1; }
 
 	const char* get_data_Inceperii() const
 	{
@@ -67,13 +71,22 @@ public:
 	{
 		return nr_Turnee_Sah;
 	}
+	Premiu_Sah* get_Premiu_Sah()
+	{
+		return P;
+	}
 
 	Turneu_Sah(const char data_start[] = "Unknown", const char data_finish[] = "Unknown",
 		const char nume_O[] = "Unknown", const char email_O[] = "Unknown",
-		const char telefon_O[] = "Unknown", const char loc[] = "Unknown", int varsta_Max = 200, int elo_Max = 9999, int elo_Min = 0);
+		const char telefon_O[] = "Unknown", const char loc[] = "Unknown", int varsta_Max = 200, int elo_Max = 9999, int elo_Min = 0, Premiu_Sah* p1=nullptr);
 	Turneu_Sah(const Turneu_Sah&);
 	Turneu_Sah& operator=(const Turneu_Sah&);
 
 	void Incepe_Turneu();
+	void Sortare_Echipe_Inaintea_Rundei();
+	void Editare_Turneu();
+	void Citire_Turneu(istream&);
+	friend void Alegere_Turneu_Sah(std::vector<std::shared_ptr<Turneu>>);
+
 };
 

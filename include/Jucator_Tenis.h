@@ -29,6 +29,7 @@ public:
 
 	friend istream& operator>>(istream&, Jucator_Tenis&);
 	friend ostream& operator<<(ostream&, Jucator_Tenis&);
+	void Citire_Jucator(istream&);
 
 };
 #endif
