@@ -52,6 +52,18 @@ void Turneu_Tenis::Incepe_Turneu()
 {
 	///Urmeaza sa implementez
 	std::cout << "Sunt in clasa Tenis cand urmeaza sa implementez turneul de tenis\n";
+    Runde = new Runda[nr_Runde];
+    for (int i = 0; i < nr_Echipe_actual; ++i)
+    {
+        Echipe[i].Calculeaza_Medie();
+    }
+    cout << *(Turneu*)this;
+    for (int i = 0; i < nr_Runde; ++i)
+    {
+        cout << "Rezultate Runda " << i + 1 << '\n';
+        Runde[i].pregateste_Runda(Echipe, nr_Echipe_actual);
+        cout << *(Turneu*)this;
+    }
 }
 
 void Turneu_Tenis::Sortare_Echipe_Inaintea_Rundei()
@@ -202,7 +214,6 @@ void Turneu_Tenis::Citire_Turneu(istream& in)
     in.getline(telefon_Organizator, 11);
     cout << "Introdu locatia turneului: ";
     in.getline(locatie, 30);
-    in.get();
     cout << "Introdu varsta maxima admisa: ";
     in >> varsta_Maxima;
     cout << "Introdu clasamentul ATP maxim admis: ";

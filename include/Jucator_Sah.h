@@ -5,21 +5,21 @@
 #include <cstring>
 using namespace std;
 
-class Jucator_Sah : public Jucator
+class Jucator_Sah : virtual public Jucator
 {
 protected:
     int elo_National;
     int elo_International;
     int elo_Online;
     char titlu[5];
-    char club_Sportiv[30];
+    char club_Sportiv_Sah[30];
     char nume_Online[30];
 public:
     void set_elo_National(const int elo) { elo_National = elo; }
     void set_elo_International(const int elo) { elo_International = elo; }
     void set_elo_Online(const int elo) { elo_Online = elo; }
     void set_Titlu(const char t[]) { strcpy(titlu, t); }
-    void set_club_Sportiv(const char t[]) { strcpy(club_Sportiv, t); }
+    void set_club_Sportiv_Sah(const char t[]) { strcpy(club_Sportiv_Sah, t); }
     void set_nume_Online(const char t[]) { strcpy, nume_Online, t; }
 
     const int get_elo_National()const
@@ -38,9 +38,9 @@ public:
     {
         return titlu;
     }
-    const char* get_club_Sportiv()const
+    const char* get_club_Sportiv_Sah()const
     {
-        return club_Sportiv;
+        return club_Sportiv_Sah;
     }
     const char* get_nume_Online()const
     {

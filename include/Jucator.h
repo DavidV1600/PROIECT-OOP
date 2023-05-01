@@ -74,6 +74,7 @@ public:
     static bool validare_Prenume(const char text[]);
     static bool validare_Cnp(const char text[]);
     virtual void Citire_Jucator(istream&);
+    void ce_Jucator_E();
 };
 
 #endif // JUCATOR_H

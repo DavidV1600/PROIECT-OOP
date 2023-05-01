@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1682346663 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
+1682965999 source:c:\users\maria\desktop\probleme\proiect-oop\main.cpp
 	<iostream>
 	<fstream>
 	"Turneu.h"
 	"Jucator_Sah.h"
 	"Jucator_Tenis.h"
+	"Jucator_Sah_Tenis.h"
 	"Turneu_Sah.h"
 	"Turneu_Tenis.h"
 	"Premiu_Sah.h"
@@ -13,19 +14,21 @@
 	<stdexcept>
 	<memory>
 
-1682616905 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1682966256 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<exception>
 	"Exceptie_Custom.h"
 	"Jucator.h"
 	<cstring>
+	"Jucator_Sah.h"
+	"Jucator_Tenis.h"
 
-1682616905 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
+1682966256 c:\users\maria\desktop\probleme\proiect-oop\include\jucator.h
 	<exception>
 	<iostream>
 
-1682620695 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1682966100 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	"Echipa.h"
@@ -89,25 +92,25 @@
 1682346611 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
 
-1682616905 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah.cpp
+1682966256 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah.cpp
 	<iostream>
 	<fstream>
 	"Jucator_Sah.h"
 
-1682616919 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
+1682966272 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
 	"Jucator.h"
 	<cstring>
 
-1682620744 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_tenis.h
+1682966282 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_tenis.h
 	"Jucator.h"
 	<cstring>
 
-1682616905 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_tenis.cpp
+1682965665 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_tenis.cpp
 	<iostream>
 	<fstream>
 	"Jucator_Tenis.h"
 
-1682617027 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_sah.cpp
+1682966072 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_sah.cpp
 	<iostream>
 	<fstream>
 	"Turneu_Sah.h"
@@ -139,7 +142,7 @@
 	"Turneu.h"
 	<cstring>
 
-1682617027 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_tenis.cpp
+1682966072 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_tenis.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -187,4 +190,12 @@
 	<string>
 
 1682445364 source:c:\users\maria\desktop\probleme\proiect-oop\src\exceptie_custom.cpp
+
+1682966256 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah_tenis.h
+	"Jucator_Sah.h"
+	"Jucator_Tenis.h"
+	<iostream>
+
+1682966256 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah_tenis.cpp
+	"Jucator_Sah_Tenis.h"
 

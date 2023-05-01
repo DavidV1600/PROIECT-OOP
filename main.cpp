@@ -3,6 +3,7 @@
 #include "Turneu.h"
 #include "Jucator_Sah.h"
 #include "Jucator_Tenis.h"
+#include "Jucator_Sah_Tenis.h"
 #include "Turneu_Sah.h"
 #include "Turneu_Tenis.h"
 #include "Premiu_Sah.h"
@@ -31,6 +32,7 @@ void Alegere_Turneu();
 void Alegere_Turneu_Sah();
 void Alegere_Turneu_Tenis();
 void Stergere_Echipa(std::shared_ptr<Turneu>);
+void Setare_Premiu_Turneu_Sah(std::shared_ptr<Turneu>) {};///SA SCOT ASTEA
 
 void Meniu_Start() {
     int tasta;
@@ -68,10 +70,10 @@ void Meniu_Start() {
         Alegere_Turneu();
         break;
     case 7:
-        Alegere_Turneu_Sah();///TO DO SAH
+        Alegere_Turneu_Sah();
         break;
     case 8:
-        Alegere_Turneu_Tenis();///TO DO TENIS
+        Alegere_Turneu_Tenis();
         break;
     default:
         std::cout << "Introducere invalida!\n\n";
@@ -83,6 +85,7 @@ void Meniu_Start() {
 void Creare_Turneu_Sah()
 {
     std::shared_ptr<Turneu>A = std::make_shared<Turneu_Sah>();///Unique Pointer pentru Sah
+
     int tasta;
     std::cout << "-------------------------------------------------\n";
     std::cout << "Apasa [0] pentru a te intoarce\n";
@@ -100,7 +103,7 @@ void Creare_Turneu_Sah()
         std::cin >> *A;
         for (int i = 0; i < A->get_nr_Maxim_Echipe(); ++i)
         {
-            Echipa b;
+            Echipa b(1);
             std::cin >> b;
             A->add_Echipa(b);
         }
@@ -134,7 +137,7 @@ void Creare_Turneu_Tenis()
         std::cin >> *A;
         for (int i = 0; i < A->get_nr_Maxim_Echipe(); ++i)
         {
-            Echipa b;
+            Echipa b(2);
             std::cin >> b;
             A->add_Echipa(b);
         }
@@ -303,7 +306,7 @@ void Editare_Turneu(std::shared_ptr<Turneu> A)
     std::cout << "Apasa [6] pentru a schimba numarul de echipe admis\n";
     std::cout << "Apasa [7] pentru a schimba numarul de runde\n";
     std::cout << "Apasa [8] pentru a incepe turneul\n";  ///Aci tre sa vad ce fct bag
-    std::cout << "---------------------------------------------------------\n";
+    std::cout << "---------------------------------------------------------\n";///TRE sa fac cumva sa pot seta premiul per turneu...
 
     std::cin >> tasta;
     std::cin.get();
@@ -368,6 +371,9 @@ void Editare_Turneu(std::shared_ptr<Turneu> A)
     case 8:
         A->Sortare_Echipe_Inaintea_Rundei();
         A->Incepe_Turneu();
+        break;
+    case 9:
+        Setare_Premiu_Turneu_Sah(A);
         break;
     default:
         std::cout << "Introducere invalida!\n\n";
@@ -574,12 +580,45 @@ void Stergere_Echipa(std::shared_ptr<Turneu> A)
 
 }
 
+/*void Setare_Premiu_Turneu_Sah(std::shared_ptr<Turneu>A)
+{
+    std::cout << "---------------------------------\n";
+    std::cout << "Apasa [0] pentru a te intoarce\n";
+    std::cout << "Apasa [1] pentru a seta fondul de premii al turneului\n";
+    std::cout << "Apasa [2] pentru a seta numarul de premianti\n";
+    std::cout << "Apasa [3] pentru a seta numarul de premi\n";
+    std::cout << "Apasa [4] pentru a seta suma per premiu\n";
+    std::cout << "Apasa [5] pentru a seta procentajul din suma totala per premiu\n";
+    std::cout << "------------------------------------\n";
+    int tasta;
+    switch (tasta)
+    {
+    case 0:
+        Editare_Turneu_Sah(A);
+        break;
+    case 1:
+        std::cout << "Introdu fondul de premii total: ";
+        std::cin >> tasta;
+        std::cin.get();
+        A->set_premiu_Total(tasta);
+        break;
+    case 2:
+        std::shared_ptr<Turneu_Sah*> A_Sah= std::dynamic_pointer_cast<Turneu_Sah*>(A);
+        A_Sah->get_Premiu_Sah()->set_nr_Premii(tasta);
+    default:
+        std::cout << "Tasta invalida mai incercati!\n";
+        Setare_Premiu_Turneu_Sah(A);
+        break;
+    }
+}*/
+
 int main()
 {
     Meniu_Start();
-
     //std::unique_ptr<Premiu>G = std::make_unique<Premiu_Sah>();///Unique Pointer
-
+    //Jucator_Sah_Tenis Gic;
+    //cin >> Gic;
+    //cout << Gic;
 
     /*Turneu T;
     cin >> T;                         ///Citesc turneu

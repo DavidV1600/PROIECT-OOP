@@ -1,9 +1,12 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <exception>
 #include "Exceptie_Custom.h"
 #include "Jucator.h"
 #include <cstring>
+#include "Jucator_Sah.h"///SA AM GRIJA CA LE AM DOAR PENTRU DYNAMIC CAST
+#include "Jucator_Tenis.h"///SA AM ....
 using namespace std;
 
 void Jucator::set_Cnp(const char text[]) ///definire Setter Cnp
@@ -305,4 +308,21 @@ void Jucator::Citire_Jucator(istream& in)
             cout << "Introducere invalida!\n";
         else break;
     } while (true);
+}
+
+void Jucator::ce_Jucator_E()
+{
+    Jucator_Tenis* jucator_tenis = dynamic_cast<Jucator_Tenis*>(this);///daca le scot sa scot #includeul
+    Jucator_Sah* jucator_sah = dynamic_cast<Jucator_Sah*>(this);///daca le scot sa scot #include
+    if (jucator_tenis != nullptr) {
+        std::cout << "E Jucator de tenis!\n";
+    }
+    else if(jucator_sah !=nullptr)
+    {
+        std::cout << "E Jucator de sah!\n";
+    }
+    else
+    {
+        std::cout << "Nu are tip";
+    }
 }

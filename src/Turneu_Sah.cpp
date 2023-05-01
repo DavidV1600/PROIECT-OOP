@@ -51,7 +51,19 @@ Turneu_Sah& Turneu_Sah::operator=(const Turneu_Sah& Gicu)
 void Turneu_Sah::Incepe_Turneu()
 {
 	///Urmeaza sa implementez
-	std::cout << "Sunt in clasa sah cand incep turneul\n";
+	std::cout << "Incepere Turneu Sah:\n";
+    Runde = new Runda[nr_Runde];
+    for (int i = 0; i < nr_Echipe_actual; ++i)
+    {
+        Echipe[i].Calculeaza_Medie();
+    }
+    cout << *(Turneu*)this;
+    for (int i = 0; i < nr_Runde; ++i)
+    {
+        cout << "Rezultate Runda " << i + 1 << '\n';
+        Runde[i].pregateste_Runda(Echipe, nr_Echipe_actual);
+        cout << *(Turneu*)this;
+    }
 }
 
 void Turneu_Sah::Sortare_Echipe_Inaintea_Rundei()

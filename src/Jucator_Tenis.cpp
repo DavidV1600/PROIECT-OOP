@@ -5,7 +5,7 @@ using namespace std;
 
 Jucator_Tenis::Jucator_Tenis(const bool mana, const int inalt,const int clasament, const char text[]):Jucator(),mana_Dominanta(mana),inaltime(inalt),clasament_ATP(clasament)
 {
-	strcpy(club_Sportiv, text);
+	strcpy(club_Sportiv_Tenis, text);
 }
 
 Jucator_Tenis::Jucator_Tenis(Jucator_Tenis& Gicu): Jucator(Gicu)
@@ -13,7 +13,7 @@ Jucator_Tenis::Jucator_Tenis(Jucator_Tenis& Gicu): Jucator(Gicu)
 	mana_Dominanta = Gicu.mana_Dominanta;
 	inaltime = Gicu.inaltime;
 	clasament_ATP = Gicu.clasament_ATP;
-	strcpy(club_Sportiv,Gicu.club_Sportiv);
+	strcpy(club_Sportiv_Tenis,Gicu.club_Sportiv_Tenis);
 }
 
 Jucator_Tenis& Jucator_Tenis::operator=(const Jucator_Tenis& Gicu)
@@ -24,7 +24,7 @@ Jucator_Tenis& Jucator_Tenis::operator=(const Jucator_Tenis& Gicu)
 		mana_Dominanta = Gicu.mana_Dominanta;
 		inaltime = Gicu.inaltime;
 		clasament_ATP = Gicu.clasament_ATP;
-		strcpy(club_Sportiv, Gicu.club_Sportiv);
+		strcpy(club_Sportiv_Tenis, Gicu.club_Sportiv_Tenis);
 	}
 	return *this;
 }
@@ -32,17 +32,6 @@ Jucator_Tenis& Jucator_Tenis::operator=(const Jucator_Tenis& Gicu)
 istream& operator>>(istream& in, Jucator_Tenis& Gicu)
 {
 	in >> static_cast<Jucator&>(Gicu);
-	cout << "Introdu mana dominanta 0-Dreapta, 1-Stanga: ";
-
-	in >> Gicu.mana_Dominanta;
-	cout << "Introdu inaltimea jucatorului (cm): ";
-
-	in >> Gicu.inaltime;
-	cout << "Introdu clubul sportiv la care activeaza jucatorul: ";
-
-	in >> Gicu.club_Sportiv;
-	in.get();
-	cout << '\n';
 	return in;
 }
 
@@ -55,7 +44,7 @@ ostream& operator<<(ostream& out,Jucator_Tenis& Gicu)
 	else out << "Stanga\n";
 	out << "Inaltimea Jucatorului (cm): " << Gicu.inaltime << '\n';
 	out << "Clasamentul ATP: " << Gicu.clasament_ATP << '\n';
-	out << "Clubul Sportiv: " << Gicu.club_Sportiv<<'\n';
+	out << "Clubul Sportiv: " << Gicu.club_Sportiv_Tenis<<'\n';
 	return out;
 }
 
@@ -63,5 +52,15 @@ void Jucator_Tenis::Citire_Jucator(istream& in)
 {
 	cout << "Sunt la jucator tenis\n";
 	this->Jucator::Citire_Jucator(in);///ACI E DUBIOS AR TREBUI SA PUN CITIREA DE LA TENIS
+	cout << "Introdu mana dominanta 0-Dreapta, 1-Stanga: ";
 
+	in >> this->mana_Dominanta;
+	cout << "Introdu inaltimea jucatorului (cm): ";
+
+	in >> this->inaltime;
+	cout << "Introdu clubul sportiv la care activeaza jucatorul: ";
+
+	in >> this->club_Sportiv_Tenis;
+	in.get();
+	cout << '\n';
 }
