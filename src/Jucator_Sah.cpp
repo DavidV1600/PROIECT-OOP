@@ -104,3 +104,14 @@ void Jucator_Sah::Citire_Jucator(istream& in)
     in.get();
     cout << '\n';
 }
+
+bool Jucator_Sah::operator<(const Jucator_Sah& A)
+{
+    if (elo_International < A.get_elo_International())
+        return true;
+    else if (elo_International == A.get_elo_International() && elo_National < A.get_elo_National())
+        return true;
+    else if (elo_International == A.get_elo_International() && elo_National < A.get_elo_National() && elo_Online < A.get_elo_Online())
+        return true;
+    return false;
+}

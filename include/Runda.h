@@ -18,7 +18,7 @@ public:
     const Meci* get_Meciuri()const { return Meciuri; }
 
     Runda(Meci* Meciuri1 = nullptr, int runda1 = 0, int nr_Meciuri1 = 0);
-    Runda(Runda&);
+    Runda(const Runda&);
     ~Runda();
 
     Runda& operator=(const Runda&);

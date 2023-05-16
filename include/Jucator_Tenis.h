@@ -1,10 +1,9 @@
-#ifndef Jucator_TENIS_H
-#define Jucator_TENIS_H
-
+#pragma once
 #include "Jucator.h"
-#include <cstring>
+#include "Sortari.h"
+#include <memory>
 using namespace std;
-
+class Istoric_Jucator_Tenis;
 class Jucator_Tenis : virtual public Jucator
 {
 protected:
@@ -12,6 +11,7 @@ protected:
 	int inaltime;
 	int clasament_ATP;
 	char club_Sportiv_Tenis[30];
+	std::unique_ptr<Istoric_Jucator_Tenis>Istoric;
 public:
 	void set_mana_Dominanta(const bool mana) { mana_Dominanta = mana; }
 	void set_Inaltime(const int inalt) { inaltime = inalt; }
@@ -26,10 +26,11 @@ public:
 	Jucator_Tenis(const bool mana = 0, const int inalt = 0,const int clasament=999, const char text[] = "Unknown");
 	Jucator_Tenis(Jucator_Tenis&);
 	Jucator_Tenis& operator=(const Jucator_Tenis&);
+	~Jucator_Tenis();
+	bool operator<(const Jucator_Tenis&);
 
 	friend istream& operator>>(istream&, Jucator_Tenis&);
 	friend ostream& operator<<(ostream&, Jucator_Tenis&);
 	void Citire_Jucator(istream&);
 
 };
-#endif

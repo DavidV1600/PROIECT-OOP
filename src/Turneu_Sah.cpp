@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Turneu_Sah.h"
+#include "Sortari.h"
 using namespace std;
 
 Turneu_Sah::Turneu_Sah(const char data_start[], const char data_finish[],
@@ -71,18 +72,7 @@ void Turneu_Sah::Sortare_Echipe_Inaintea_Rundei()
 	for (int i = 0; i < nr_Echipe_actual - 1; ++i)
 		for (int j = i + 1; j < nr_Echipe_actual; ++j)
 		{
-			if (Echipe[i].get_Puncte() < Echipe[j].get_Puncte())
-			{
-				Echipa temp = Echipe[i];
-				Echipe[i] = Echipe[j];
-				Echipe[j] = temp;
-			}
-			else if (Echipe[i].get_Puncte() == Echipe[j].get_Puncte() && Echipe[i].get_Elo_Echipa() < Echipe[j].get_Elo_Echipa()) {
-				Echipa temp = Echipe[i];
-				Echipe[i] = Echipe[j];
-				Echipe[j] = temp;
-			}
-
+            Compara(Echipe[i], Echipe[j]);
 		}
 }
 
@@ -116,6 +106,7 @@ void Turneu_Sah::Citire_Turneu(istream& in)
 void Turneu_Sah::Editare_Turneu()
 {
     int tasta;
+    std::cout << "Sunt in editare sah\n";///o so scot e doar de test
     std::cout << "--------------------------------------------------------\n";
     std::cout << "Apasa [0] pentru a te intoarce \n";
     std::cout << "Apasa [1] pentru a adauga echipa\n";

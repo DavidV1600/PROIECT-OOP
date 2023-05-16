@@ -1,10 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 #include "Turneu.h"
+#include "Sortari.h"
 using namespace std;
 
-Turneu::Turneu(int nr_Echipe_actual1, int nr_Maxim_Echipe1, int premiu_Total1, int taxa_Participare1, int nr_Runde1, const char nume_Turneu1[30], Echipa* Echipe1, Runda* Runde1)///constructor cu parametri impliciti
+Turneu::Turneu(int nr_Echipe_actual1, int nr_Maxim_Echipe1, int premiu_Total1, int taxa_Participare1, int nr_Runde1, const char nume_Turneu1[30])///constructor cu parametri impliciti
 {
     nr_Echipe_actual = nr_Echipe_actual1;
     nr_Maxim_Echipe = nr_Maxim_Echipe1;
@@ -12,8 +14,9 @@ Turneu::Turneu(int nr_Echipe_actual1, int nr_Maxim_Echipe1, int premiu_Total1, i
     taxa_Participare = taxa_Participare1;
     nr_Runde = nr_Runde1;
     strcpy(nume_Turneu, nume_Turneu1);
-    Echipe = Echipe1;
-    Runde = Runde1;
+    Echipe = nullptr;
+    Runde = nullptr;
+
 }
 
 Turneu::Turneu(const Turneu& Gicu)///Constructor de copiere
@@ -28,6 +31,14 @@ Turneu::Turneu(const Turneu& Gicu)///Constructor de copiere
     {
         std::cout << "Memorie alocata invalida\n";
 
+    }
+    for (int i = 0; i < Gicu.Echipee.size(); ++i)
+    {
+        Echipee.push_back(Gicu.Echipee[i]);
+    }
+    for (int i = 0; i < Gicu.Rundee.size(); ++i)
+    {
+        Rundee.push_back(Gicu.Rundee[i]);
     }
     nr_Maxim_Echipe = Gicu.nr_Maxim_Echipe;
     premiu_Total = Gicu.premiu_Total;
@@ -54,6 +65,7 @@ void Turneu::add_Echipa(const Echipa& Gicu)///Functie de adaugare Echipe
     {
         std::cout << e.what();
     }
+    Echipee.push_back(Gicu);
         Echipa* temp;
         temp = new Echipa[nr_Echipe_actual];
         for (int i = 0; i < nr_Echipe_actual - 1; ++i)
@@ -75,6 +87,19 @@ void Turneu::sterge_Echipa(const Echipa& Gicu)///Functie de stergere Echipe
     Echipa* temp;
     temp = new Echipa[nr_Echipe_actual];
     int k = 0;
+    int sa_gasit = 0;
+
+    for (int i = 0; i < Echipee.size(); ++i)
+    {
+        if (Echipee[i] == Gicu)
+        {
+            sa_gasit = 1;
+            Echipee.erase(Echipee.begin() + i);
+            break;
+        }
+    }
+    if (sa_gasit == 0)
+        std::cout << "Nu s-a gasit echipa!\n";
     for (int i = 0; i <= nr_Echipe_actual; ++i)
         if (strcmp(Echipe[i].get_Nume(), Gicu.get_Nume()) != 0)
         {
@@ -90,30 +115,21 @@ void Turneu::sterge_Runda()///functie de stergere runda
     nr_Runde--;
 }
 
-void Turneu::Sortare_Echipe_Inaintea_Rundei()///functie sortare dupa puncte acumulate , iar in caz de egalitate apoi dupa elo
+void Turneu::Gasire_Echipa(const Echipa& E)//inca nu merge prea bine
 {
-    for (int i = 0; i < nr_Echipe_actual - 1; ++i)
-        for (int j = i + 1; j < nr_Echipe_actual; ++j)
-        {
-            if (Echipe[i].get_Puncte() < Echipe[j].get_Puncte())
-            {
-                Echipa temp = Echipe[i];
-                Echipe[i] = Echipe[j];
-                Echipe[j] = temp;
-            }
-            else if (Echipe[i].get_Puncte() == Echipe[j].get_Puncte() && Echipe[i].get_Elo_Echipa() < Echipe[j].get_Elo_Echipa()) {
-                Echipa temp = Echipe[i];
-                Echipe[i] = Echipe[j];
-                Echipe[j] = temp;
-            }
+    auto it = std::find(Echipee.begin(), Echipee.end(), E);
+    if (it != Echipee.end())
+        std::cout << "Echipa e pe pozitia " << std::distance(Echipee.begin(), it) << '\n';
+    else std::cout << "Echipa nu este in turneu!\n";
 
-        }
 }
 
 Turneu::~Turneu()///Destructor
 {
     delete[]Echipe;
     delete[]Runde;
+    Echipee.clear();
+    Rundee.clear();
 }
 
 Turneu& Turneu::operator=(const Turneu& Gicu)///redefinire operatorul =
@@ -122,6 +138,8 @@ Turneu& Turneu::operator=(const Turneu& Gicu)///redefinire operatorul =
     {
         delete[]Echipe;
         delete[]Runde;
+        Echipee.clear();
+        Rundee.clear();
         Echipe = new Echipa[Gicu.nr_Echipe_actual];
         Runde = new Runda[Gicu.nr_Runde];
         nr_Echipe_actual = Gicu.nr_Echipe_actual;
@@ -134,6 +152,14 @@ Turneu& Turneu::operator=(const Turneu& Gicu)///redefinire operatorul =
             Echipe[i] = Gicu.Echipe[i];
         for (int i = 0; i < nr_Runde; ++i)
             Runde[i] = Gicu.Runde[i];
+        for (int i = 0; i < Gicu.Echipee.size(); ++i)
+        {
+            Echipee.push_back(Gicu.Echipee[i]);
+        }
+        for (int i = 0; i < Gicu.Rundee.size(); ++i)
+        {
+            Rundee.push_back(Gicu.Rundee[i]);
+        }
 
     }
     return *this;
@@ -141,12 +167,11 @@ Turneu& Turneu::operator=(const Turneu& Gicu)///redefinire operatorul =
 
 ostream& operator<<(ostream& out, Turneu& Gicu)///redefinire operator << (Afisare Turneu)
 {
-    Gicu.Sortare_Echipe_Inaintea_Rundei();
+    Sortare(Gicu.Echipe, Gicu.nr_Echipe_actual);
     out << "Clasament:\n";
     for (int i = 0; i < Gicu.nr_Echipe_actual; ++i) {
-        out << i + 1 << ".) " << Gicu.Echipe[i].get_Nume() << "  Puncte: " << Gicu.Echipe[i].get_Puncte() << " Elo: " << Gicu.Echipe[i].get_Elo_Echipa() << '\n';
+        out << i + 1 << ".) " << Gicu.Echipee[i].get_Nume() << "  Puncte: " << Gicu.Echipee[i].get_Puncte() << " Elo: " << Gicu.Echipee[i].get_Elo_Echipa() << '\n';
     }
-    out << '\n';
     return out;
 }
 
@@ -259,7 +284,7 @@ void Turneu::Editare_Turneu()
         this->Editare_Turneu();
         break;
     case 8:
-        this->Sortare_Echipe_Inaintea_Rundei();
+        Sortare(this->Echipe, this->nr_Echipe_actual);
         this->Incepe_Turneu();
         this->Editare_Turneu();
         break;
@@ -320,3 +345,9 @@ void Alegere_Turneu(std::vector<std::shared_ptr<Turneu>>Lista_Turnee_Create)
         Alegere_Turneu(Lista_Turnee_Create);
     }
 }
+
+void Turneu::Sortare_Echipe_Inaintea_Rundei()
+{
+    Sortare(Echipe, nr_Echipe_actual);///sa nu mai modific getterul sa nu fie const
+}
+

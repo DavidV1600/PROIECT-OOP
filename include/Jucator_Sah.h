@@ -2,7 +2,7 @@
 #define JUCATOR_SAH_H
 
 #include "Jucator.h"
-#include <cstring>
+#include "Sortari.h"
 using namespace std;
 
 class Jucator_Sah : virtual public Jucator
@@ -14,6 +14,7 @@ protected:
     char titlu[5];
     char club_Sportiv_Sah[30];
     char nume_Online[30];
+    //std::unique_ptr<Istoric_Jucator_Sah>Istoric;
 public:
     void set_elo_National(const int elo) { elo_National = elo; }
     void set_elo_International(const int elo) { elo_International = elo; }
@@ -50,6 +51,7 @@ public:
     Jucator_Sah(const int elo1 = 0, const int elo2 = 0, const int elo3 = 0, const char titlu1[] = "Unknown", const char club[]="Unknown", const char nume_Online1[]="Unknown");
     Jucator_Sah(const Jucator_Sah& Gicu);
     Jucator_Sah& operator=(const Jucator_Sah& Gicu);
+    bool operator<(const Jucator_Sah&);
 
     friend istream& operator >>(istream& in, Jucator_Sah& Gicu);
     friend ostream& operator <<(ostream& out, Jucator_Sah& Gicu);

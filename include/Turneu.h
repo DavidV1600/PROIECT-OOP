@@ -5,7 +5,6 @@
 #include "Premiu.h"
 #include <cstring>
 #include <vector>
-#include <memory>
 
 using namespace std;
 
@@ -22,6 +21,8 @@ protected:
     int nr_Runde;
     Echipa* Echipe;
     Runda* Runde;
+    vector<Echipa>Echipee;
+    vector<Runda>Rundee;
 
 public:
     void static set_nr_Turnee_Create(const int nr)
@@ -98,15 +99,16 @@ public:
     virtual void Editare_Turneu();///ca pot sa o fac pura
     virtual void Citire_Turneu(istream&);
     void Stergere_Echipa();
-
-    Turneu(int nr_Echipe_actual1 = 0, int nr_Maxim_Echipe1 = 0, int premiu_Total1 = 0, int taxa_Participare1 = 0, int nr_Runde1 = 0, const char nume_Turneu1[30] = "", Echipa* Echipe1 = nullptr, Runda* Runde1 = nullptr);
+    void Gasire_Echipa(const Echipa&);
+    Turneu(int nr_Echipe_actual1 = 0, int nr_Maxim_Echipe1 = 0, int premiu_Total1 = 0, int taxa_Participare1 = 0, int nr_Runde1 = 0, const char nume_Turneu1[30] = "");
     Turneu(const Turneu&);
     ~Turneu();
 
-    Turneu& operator=(const Turneu&);///nu cre ca trebe?
+    Turneu& operator=(const Turneu&);
     friend ostream& operator<<(ostream&, Turneu&);
     friend istream& operator>>(istream&, Turneu&);
     friend void Alegere_Turneu(std::vector<std::shared_ptr<Turneu>>);
+
 };
 
 #endif // TURNEU_H

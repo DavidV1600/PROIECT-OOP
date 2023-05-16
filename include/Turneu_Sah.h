@@ -81,7 +81,6 @@ public:
 		const char telefon_O[] = "Unknown", const char loc[] = "Unknown", int varsta_Max = 200, int elo_Max = 9999, int elo_Min = 0, Premiu_Sah* p1=nullptr);
 	Turneu_Sah(const Turneu_Sah&);
 	Turneu_Sah& operator=(const Turneu_Sah&);
-
 	void Incepe_Turneu();
 	void Sortare_Echipe_Inaintea_Rundei();
 	void Editare_Turneu();

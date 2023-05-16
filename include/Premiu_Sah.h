@@ -11,6 +11,7 @@ private:
 public:
 	void set_nr_Premianti(const int nr) override { nr_Premianti = nr; }
 	void set_nr_Premi(const int nr) override { nr_Premii = nr; }
+
 	const int get_nr_Premianti()const override { return nr_Premianti; }
 	const int get_nr_Premii() const override { return nr_Premii; };
 	void seteaza_Suma_per_Premiu (const int suma_Totala);

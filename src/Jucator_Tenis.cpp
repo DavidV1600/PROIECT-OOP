@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Jucator_Tenis.h"
+#include "Istoric_Jucator_Tenis.h"
 using namespace std;
 
 Jucator_Tenis::Jucator_Tenis(const bool mana, const int inalt,const int clasament, const char text[]):Jucator(),mana_Dominanta(mana),inaltime(inalt),clasament_ATP(clasament)
@@ -63,4 +64,16 @@ void Jucator_Tenis::Citire_Jucator(istream& in)
 	in >> this->club_Sportiv_Tenis;
 	in.get();
 	cout << '\n';
+}
+
+bool Jucator_Tenis::operator<(const Jucator_Tenis& A)
+{
+	if (clasament_ATP > A.clasament_ATP)
+		return true;
+	return false;
+}
+
+Jucator_Tenis::~Jucator_Tenis()
+{
+
 }

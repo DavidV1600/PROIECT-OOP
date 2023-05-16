@@ -1,7 +1,8 @@
 #pragma once
 #include "Istoric_Jucator.h"
+#include "Jucator_Sah.h"
 class Istoric_Jucator_Sah :
-    public Istoric_Jucator
+    public Istoric_Jucator<Jucator_Sah>
 {
 public:
     void Afiseaza_Adversarii() override;

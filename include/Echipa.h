@@ -14,7 +14,6 @@ private:
     int elo_echipa;
     int puncte;
     int tip_Echipa;
-    Jucator* Membri;///tre sa fac vector de pointeri catre jucator
     vector<std::shared_ptr<Jucator>>Membrii;
 
 public:
@@ -38,7 +37,7 @@ public:
     void Calculeaza_Medie(); ///calculez media jucatorilor
     void Add_Membru(const Jucator&); ///bag membru
     void Sterge_Jucator(const Jucator& jucatorDeSters);
-    void Citire_Nume_Echipa()
+    void Citire_Nume_Echipa()///cre ca o so scot
     {
         cout << "Introdu Numele Urmatoarei Echipei: ";
         cin.getline(nume, 20);
@@ -56,10 +55,6 @@ public:
     {
         return elo_echipa;   ///GETTERI
     }
-    const Jucator* get_Membri()const
-    {
-        return Membri;
-    }
     const vector<std::shared_ptr<Jucator>> get_Membrii()const
     {
         return Membrii;
@@ -69,14 +64,19 @@ public:
         return puncte;
     }
 
-    Echipa(const char nume_1[] = "", int nr_membri = 0, int echipa_elo = 0, Jucator* Membru = nullptr, int puncte1 = 0,int tip_Echipa1=0); ///CONSTRUCTOR
+    Echipa(const char nume_1[] = "", int nr_membri = 0, int echipa_elo = 0, int puncte1 = 0,int tip_Echipa1=0); ///CONSTRUCTOR
     Echipa(int tip);
-    Echipa(Echipa&); ///Constructor de copiere
+    Echipa(const Echipa&); ///Constructor de copiere
     ~Echipa(); ///Destructor
+    void Sortare_Echipa();
 
+    bool operator < (const Echipa&);
+    bool operator ==(const Echipa&)const;
     Echipa& operator=(const Echipa&); ///Operatorul =
     friend ostream& operator<<(ostream&, Echipa&); ///Afisare
     friend istream& operator>>(istream&, Echipa&); ///Citire
+    void Gaseste_Pozitia_In_Echipa(const Jucator&);
+    void Inverseaza_Ordinea_Jucatorilor();///Pentru Vizualizare de la cel mai bun la cel mai slab si invers
 };
 
 #endif // ECHIPA_H

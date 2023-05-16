@@ -41,6 +41,7 @@
 		<Unit filename="include/Istoric_Jucator_Tenis.h" />
 		<Unit filename="include/Jucator.h" />
 		<Unit filename="include/Jucator_Sah.h" />
+		<Unit filename="include/Jucator_Sah_Tenis.h" />
 		<Unit filename="include/Jucator_Tenis.h" />
 		<Unit filename="include/Meci.h" />
 		<Unit filename="include/Meci_Sah.h" />
@@ -61,6 +62,7 @@
 		<Unit filename="src/Istoric_Jucator_Tenis.cpp" />
 		<Unit filename="src/Jucator.cpp" />
 		<Unit filename="src/Jucator_Sah.cpp" />
+		<Unit filename="src/Jucator_Sah_Tenis.cpp" />
 		<Unit filename="src/Jucator_Tenis.cpp" />
 		<Unit filename="src/Meci.cpp" />
 		<Unit filename="src/Meci_Sah.cpp" />
