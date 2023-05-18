@@ -78,14 +78,14 @@ public:
 
 	Turneu_Sah(const char data_start[] = "Unknown", const char data_finish[] = "Unknown",
 		const char nume_O[] = "Unknown", const char email_O[] = "Unknown",
-		const char telefon_O[] = "Unknown", const char loc[] = "Unknown", int varsta_Max = 200, int elo_Max = 9999, int elo_Min = 0, Premiu_Sah* p1=nullptr);
+		const char telefon_O[] = "Unknown", const char loc[] = "Unknown",const int varsta_Max = 200,const int elo_Max = 9999,const int elo_Min = 0,Premiu_Sah* p1=nullptr);
 	Turneu_Sah(const Turneu_Sah&);
 	Turneu_Sah& operator=(const Turneu_Sah&);
 	void Incepe_Turneu();
 	void Sortare_Echipe_Inaintea_Rundei();
 	void Editare_Turneu();
 	void Citire_Turneu(istream&);
-	friend void Alegere_Turneu_Sah(std::vector<std::shared_ptr<Turneu>>);
+	friend void Alegere_Turneu_Sah(const std::vector<std::shared_ptr<Turneu>>);
 
 };
 

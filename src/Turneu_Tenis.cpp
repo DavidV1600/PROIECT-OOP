@@ -8,7 +8,7 @@ using namespace std;
 
 Turneu_Tenis::Turneu_Tenis(const char data_start[], const char data_finish[],
 	const char nume_O[], const char email_O[],
-	const char telefon_O[], const char loc[], int varsta_Max, int clasament_Max, int clasament_Min) :Turneu(), varsta_Maxima(varsta_Max), clasament_Maxim(clasament_Max), clasament_Minim(clasament_Min)
+	const char telefon_O[], const char loc[],const int varsta_Max,const int clasament_Max,const int clasament_Min) :Turneu(), varsta_Maxima(varsta_Max), clasament_Maxim(clasament_Max), clasament_Minim(clasament_Min)
 {
 	strcpy(locatie, loc);
 	strcpy(data_Inceperii, data_start);

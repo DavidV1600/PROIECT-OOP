@@ -32,7 +32,7 @@ void Premiu_Tenis::seteaza_Procentaj_per_Premiu(const int suma_Totala)
 	}
 }
 
-Premiu_Tenis::Premiu_Tenis(int nr_Premii1, int nr_Premianti1)
+Premiu_Tenis::Premiu_Tenis(const int nr_Premii1,const int nr_Premianti1)
 {
 	nr_Premianti = nr_Premianti1;
 	nr_Premii = nr_Premii1;

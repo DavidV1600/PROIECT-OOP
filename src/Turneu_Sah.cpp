@@ -6,7 +6,7 @@ using namespace std;
 
 Turneu_Sah::Turneu_Sah(const char data_start[], const char data_finish[],
 	const char nume_O[], const char email_O[],
-	const char telefon_O[], const char loc[], int varsta_Max, int elo_Max, int elo_Min,Premiu_Sah* p1) :Turneu(), varsta_Maxima(varsta_Max), elo_Maxim(elo_Max), elo_Minim(elo_Min), P(p1)
+	const char telefon_O[], const char loc[],const int varsta_Max,const int elo_Max,const int elo_Min,Premiu_Sah* p1) :Turneu(), varsta_Maxima(varsta_Max), elo_Maxim(elo_Max), elo_Minim(elo_Min), P(p1)
 {
 	strcpy(locatie, loc);
 	strcpy(data_Inceperii, data_start);
@@ -191,7 +191,7 @@ void Turneu_Sah::Editare_Turneu()
     }
 }
 
-void Alegere_Turneu_Sah(std::vector<std::shared_ptr<Turneu>>Lista_Turnee_Sah)
+void Alegere_Turneu_Sah(const std::vector<std::shared_ptr<Turneu>>Lista_Turnee_Sah)
 {
     int tasta;
     std::cout << "-----------------------\n";

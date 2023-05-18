@@ -32,7 +32,7 @@ void Premiu_Sah::seteaza_Procentaj_per_Premiu(const int suma_Totala)
 	}
 }
 
-Premiu_Sah::Premiu_Sah(int nr_Premii1, int nr_Premianti1)
+Premiu_Sah::Premiu_Sah(const int nr_Premii1,const int nr_Premianti1)
 {
 	nr_Premianti = nr_Premianti1;
 	nr_Premii = nr_Premii1;

@@ -99,14 +99,14 @@ public:
     void Stergere_Echipa();
     void Gasire_Echipa(const Echipa&);
     void Intoarce_Clasamentul();
-    Turneu(int nr_Echipe_actual1 = 0, int nr_Maxim_Echipe1 = 0, int premiu_Total1 = 0, int taxa_Participare1 = 0, int nr_Runde1 = 0, const char nume_Turneu1[30] = "");
+    Turneu(const int nr_Echipe_actual1 = 0,const int nr_Maxim_Echipe1 = 0,const int premiu_Total1 = 0,const int taxa_Participare1 = 0,const int nr_Runde1 = 0, const char nume_Turneu1[30] = "");
     Turneu(const Turneu&);
     ~Turneu();
 
     Turneu& operator=(const Turneu&);
     friend ostream& operator<<(ostream&, Turneu&);
     friend istream& operator>>(istream&, Turneu&);
-    friend void Alegere_Turneu(std::vector<std::shared_ptr<Turneu>>);
+    friend void Alegere_Turneu(const std::vector<std::shared_ptr<Turneu>>);
 
 };
 

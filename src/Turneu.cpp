@@ -6,7 +6,7 @@
 #include "Sortari.h"
 using namespace std;
 
-Turneu::Turneu(int nr_Echipe_actual1, int nr_Maxim_Echipe1, int premiu_Total1, int taxa_Participare1, int nr_Runde1, const char nume_Turneu1[30])///constructor cu parametri impliciti
+Turneu::Turneu(const int nr_Echipe_actual1,const int nr_Maxim_Echipe1,const int premiu_Total1,const int taxa_Participare1,const int nr_Runde1, const char nume_Turneu1[30])///constructor cu parametri impliciti
 {
     nr_Echipe_actual = nr_Echipe_actual1;
     nr_Maxim_Echipe = nr_Maxim_Echipe1;
@@ -126,7 +126,7 @@ Turneu& Turneu::operator=(const Turneu& Gicu)///redefinire operatorul =
 
 ostream& operator<<(ostream& out, Turneu& Gicu)///redefinire operator << (Afisare Turneu)
 {
-    Sortare(Gicu.Echipee, Gicu.nr_Echipe_actual);
+    Sortare(Gicu.Echipee, Gicu.nr_Echipe_actual);///le sortez aici deaia nu e const
     out << "Clasament:\n";
     for (int i = 0; i < Gicu.nr_Echipe_actual; ++i) {
         out << i + 1 << ".) " << Gicu.Echipee[i].get_Nume() << "  Puncte: " << Gicu.Echipee[i].get_Puncte() << " Elo: " << Gicu.Echipee[i].get_Elo_Echipa() << '\n';
@@ -279,7 +279,7 @@ void Turneu::Stergere_Echipa()
     }
 
 }
-void Alegere_Turneu(std::vector<std::shared_ptr<Turneu>>Lista_Turnee_Create)
+void Alegere_Turneu(const std::vector<std::shared_ptr<Turneu>>Lista_Turnee_Create)
 {
     int tasta;
     std::cout << "-----------------------\n";

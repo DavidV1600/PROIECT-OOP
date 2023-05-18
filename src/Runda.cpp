@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Runda::Runda(Meci* Meciuri1, int runda1, int nr_Meciuri1)///Constructor cu parametri impliciti
+Runda::Runda(Meci* Meciuri1,const int runda1,const int nr_Meciuri1)///Constructor cu parametri impliciti
 {
     Meciuri = Meciuri1;
     nr_Runda = runda1;
@@ -46,7 +46,7 @@ Runda::~Runda()///Destructor
     delete[]Meciuri;
 }
 
-void Runda::pregateste_Runda(vector<Echipa>& Echipe1, int nr_Echipe)
+void Runda::pregateste_Runda(vector<Echipa>& Echipe1,const int nr_Echipe)
 {
 
     nr_Meciuri = (nr_Echipe / 2);

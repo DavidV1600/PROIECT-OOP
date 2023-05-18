@@ -1,5 +1,5 @@
 #include "Sortari.h"
-template<>
+template<>///In codeblocks trebe ???
 void Sortare <vector<std::shared_ptr<Jucator_Tenis>>>(vector<std::shared_ptr<Jucator_Tenis>>& A, int n)///sa-l declar in cpp
 {
 	vector<std::shared_ptr<Jucator_Tenis>> B;

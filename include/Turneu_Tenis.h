@@ -70,7 +70,7 @@ public:
 
 	Turneu_Tenis(const char data_start[] = "Unknown", const char data_finish[] = "Unknown",
 		const char nume_O[] = "Unknown", const char email_O[] = "Unknown",
-		const char telefon_O[] = "Unknown", const char loc[] = "Unknown", int varsta_Max = 200, int clasament_Max = 9999, int clasament_Min = 0);
+		const char telefon_O[] = "Unknown", const char loc[] = "Unknown",const int varsta_Max = 200,const int clasament_Max = 9999,const int clasament_Min = 0);
 	Turneu_Tenis(const Turneu_Tenis&);
 	Turneu_Tenis& operator=(const Turneu_Tenis&);
 

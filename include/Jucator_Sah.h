@@ -54,7 +54,7 @@ public:
     bool operator<(const Jucator_Sah&);
 
     friend istream& operator >>(istream& in, Jucator_Sah& Gicu);
-    friend ostream& operator <<(ostream& out, Jucator_Sah& Gicu);
+    friend ostream& operator <<(ostream& out,Jucator_Sah& Gicu);
     static bool validare_Titlu(const char text[]);
     void Citire_Jucator(istream&);
 };

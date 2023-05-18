@@ -53,7 +53,7 @@ istream& operator >>(istream& in, Jucator_Sah& Gicu)
     return in;
 }
 
-ostream& operator <<(ostream& out, Jucator_Sah& Gicu)
+ostream& operator <<(ostream& out,Jucator_Sah& Gicu)
 {
     out << static_cast<Jucator&>(Gicu);
     cout << "Elo-International: " << Gicu.get_elo_International();

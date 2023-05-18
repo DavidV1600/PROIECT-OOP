@@ -148,7 +148,7 @@ void Echipa::Inverseaza_Ordinea_Jucatorilor()
 
 ostream& operator<<(ostream& out, Echipa& Gicu)///Afisare
 {
-    Gicu.Calculeaza_Medie();
+    Gicu.Calculeaza_Medie();///calculez medie deaia nu e const
     out << "Nume Echipa: " << Gicu.nume << '\n' << "Puncte: " << Gicu.get_Puncte() << '\n' << "Elo Echipa: " << Gicu.elo_echipa << '\n' << "Numar Membri: " << Gicu.numar_membri << '\n' << "Membri: ";
     int i;
     for (i = 0; i < Gicu.numar_membri - 1; ++i)

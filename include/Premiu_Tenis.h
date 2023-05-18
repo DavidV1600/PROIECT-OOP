@@ -17,7 +17,7 @@ public:
 	void seteaza_Suma_per_Premiu(const int suma_Totala);
 	void seteaza_Procentaj_per_Premiu(const int suma_Totala);
 
-	Premiu_Tenis(int nr_Premii1 = 0, int nr_Premianti1 = 0);
+	Premiu_Tenis(const int nr_Premii1 = 0,const int nr_Premianti1 = 0);
 	Premiu_Tenis(const Premiu_Tenis&);
 	~Premiu_Tenis();
 };
