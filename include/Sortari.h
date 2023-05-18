@@ -21,6 +21,7 @@ template <class T>
 			for (int j = i + 1; j < n; ++j)
 				Compara(A[i], A[j]);
 	}
-//template<>
-//void Sortare <vector<std::shared_ptr<Jucator_Tenis>>>(vector<std::shared_ptr<Jucator_Tenis>>& A, int n);///sa-l declar in cpp
+class Jucator_Tenis;
+template<>
+void Sortare <vector<std::shared_ptr<Jucator_Tenis>>>(vector<std::shared_ptr<Jucator_Tenis>>& A, int n);///sa-l declar in cpp
 

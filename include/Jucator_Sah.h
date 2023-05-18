@@ -21,7 +21,7 @@ public:
     void set_elo_Online(const int elo) { elo_Online = elo; }
     void set_Titlu(const char t[]) { strcpy(titlu, t); }
     void set_club_Sportiv_Sah(const char t[]) { strcpy(club_Sportiv_Sah, t); }
-    void set_nume_Online(const char t[]) { strcpy, nume_Online, t; }
+    void set_nume_Online(const char t[]) { strcpy(nume_Online, t); }
 
     const int get_elo_National()const
     {

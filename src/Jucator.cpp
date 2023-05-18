@@ -144,7 +144,6 @@ bool operator==(const Jucator& j1, const Jucator& j2)
 
 void Jucator::Citire_Jucator(istream& in)
 {
-    int lg;
     char text[100];
     do {
         cout << "Introdu CNP-ul: ";

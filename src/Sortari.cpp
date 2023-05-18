@@ -1,4 +1,5 @@
-/*#include "Sortari.h"
+#include "Sortari.h"
+template<>
 void Sortare <vector<std::shared_ptr<Jucator_Tenis>>>(vector<std::shared_ptr<Jucator_Tenis>>& A, int n)///sa-l declar in cpp
 {
 	vector<std::shared_ptr<Jucator_Tenis>> B;
@@ -12,4 +13,4 @@ void Sortare <vector<std::shared_ptr<Jucator_Tenis>>>(vector<std::shared_ptr<Juc
 	for (int i = 0; i < n; ++i)
 		A[i] = B[i];
 	B.clear();
-}*/
+}

@@ -53,16 +53,16 @@ void Turneu_Sah::Incepe_Turneu()
 {
 	///Urmeaza sa implementez
 	std::cout << "Incepere Turneu Sah:\n";
-    Runde = new Runda[nr_Runde];
+    Rundee.resize(nr_Runde);
     for (int i = 0; i < nr_Echipe_actual; ++i)
     {
-        Echipe[i].Calculeaza_Medie();
+        Echipee[i].Calculeaza_Medie();
     }
     cout << *(Turneu*)this;
     for (int i = 0; i < nr_Runde; ++i)
     {
         cout << "Rezultate Runda " << i + 1 << '\n';
-        Runde[i].pregateste_Runda(Echipe, nr_Echipe_actual);
+        Rundee[i].pregateste_Runda(Echipee, nr_Echipe_actual);
         cout << *(Turneu*)this;
     }
 }
@@ -72,7 +72,7 @@ void Turneu_Sah::Sortare_Echipe_Inaintea_Rundei()
 	for (int i = 0; i < nr_Echipe_actual - 1; ++i)
 		for (int j = i + 1; j < nr_Echipe_actual; ++j)
 		{
-            Compara(Echipe[i], Echipe[j]);
+            Compara(Echipee[i], Echipee[j]);
 		}
 }
 

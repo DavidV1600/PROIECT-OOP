@@ -50,9 +50,11 @@
 		<Unit filename="include/Premiu_Sah.h" />
 		<Unit filename="include/Premiu_Tenis.h" />
 		<Unit filename="include/Runda.h" />
+		<Unit filename="include/Sortari.h" />
 		<Unit filename="include/Turneu.h" />
 		<Unit filename="include/Turneu_Sah.h" />
 		<Unit filename="include/Turneu_Tenis.h" />
+		<Unit filename="include/Validare.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="poo.in" />
 		<Unit filename="src/Echipa.cpp" />
@@ -70,6 +72,7 @@
 		<Unit filename="src/Premiu_Sah.cpp" />
 		<Unit filename="src/Premiu_Tenis.cpp" />
 		<Unit filename="src/Runda.cpp" />
+		<Unit filename="src/Sortari.cpp" />
 		<Unit filename="src/Turneu.cpp" />
 		<Unit filename="src/Turneu_Sah.cpp" />
 		<Unit filename="src/Turneu_Tenis.cpp" />

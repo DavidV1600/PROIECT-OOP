@@ -135,7 +135,7 @@ void Echipa::Gaseste_Pozitia_In_Echipa(const Jucator& J)
             }
         );
         if (it != Membrii.end()) {
-            std::cout << "E pe pozitia " << std::distance(Membrii.begin(), it) << '\n';
+            std::cout << "E pe pozitia " << std::distance(Membrii.begin(), it)+1 << '\n';
         }
         else std::cout << "Nu e in echipa\n";
 

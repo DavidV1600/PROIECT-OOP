@@ -46,7 +46,7 @@ Runda::~Runda()///Destructor
     delete[]Meciuri;
 }
 
-void Runda::pregateste_Runda(Echipa*& Echipe1, int nr_Echipe)
+void Runda::pregateste_Runda(vector<Echipa>& Echipe1, int nr_Echipe)
 {
 
     nr_Meciuri = (nr_Echipe / 2);

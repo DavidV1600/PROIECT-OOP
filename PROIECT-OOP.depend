@@ -14,7 +14,7 @@
 	<stdexcept>
 	<memory>
 
-1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
+1684403137 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator.cpp
 	<iostream>
 	<fstream>
 	<exception>
@@ -31,7 +31,7 @@
 	<iostream>
 	<cstring>
 
-1684230189 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
+1684402760 source:c:\users\maria\desktop\probleme\proiect-oop\src\echipa.cpp
 	<iostream>
 	<fstream>
 	"Echipa.h"
@@ -66,7 +66,7 @@
 	"Jucator.h"
 	<cstring>
 
-1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
+1684402801 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -74,7 +74,7 @@
 	"Turneu.h"
 	"Sortari.h"
 
-1684230174 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
+1684402801 c:\users\maria\desktop\probleme\proiect-oop\include\turneu.h
 	"Echipa.h"
 	"Runda.h"
 	"Premiu.h"
@@ -91,12 +91,12 @@
 	<cstring>
 	<memory>
 
-1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
+1684233458 source:c:\users\maria\desktop\probleme\proiect-oop\src\runda.cpp
 	<iostream>
 	<fstream>
 	"Runda.h"
 
-1684230174 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
+1684233493 c:\users\maria\desktop\probleme\proiect-oop\include\runda.h
 	"Meci.h"
 
 1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah.cpp
@@ -104,7 +104,7 @@
 	<fstream>
 	"Jucator_Sah.h"
 
-1684230174 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
+1684403123 c:\users\maria\desktop\probleme\proiect-oop\include\jucator_sah.h
 	"Jucator.h"
 	"Sortari.h"
 
@@ -119,7 +119,7 @@
 	"Jucator_Tenis.h"
 	"Istoric_Jucator_Tenis.h"
 
-1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_sah.cpp
+1684233589 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_sah.cpp
 	<iostream>
 	<fstream>
 	"Turneu_Sah.h"
@@ -152,7 +152,7 @@
 	"Turneu.h"
 	<cstring>
 
-1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_tenis.cpp
+1684233589 source:c:\users\maria\desktop\probleme\proiect-oop\src\turneu_tenis.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -211,7 +211,7 @@
 1684230174 source:c:\users\maria\desktop\probleme\proiect-oop\src\jucator_sah_tenis.cpp
 	"Jucator_Sah_Tenis.h"
 
-1684229774 c:\users\maria\desktop\probleme\proiect-oop\include\sortari.h
+1684403043 c:\users\maria\desktop\probleme\proiect-oop\include\sortari.h
 	"Jucator_Tenis.h"
 	<memory>
 	<vector>

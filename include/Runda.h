@@ -24,7 +24,7 @@ public:
     Runda& operator=(const Runda&);
     friend ostream& operator<<(ostream&, const Runda&);
     void add_Meci(const Meci&);
-    void pregateste_Runda(Echipa*&, int);
+    void pregateste_Runda(vector<Echipa>&, int);
 };
 
 #endif // RUNDA_H

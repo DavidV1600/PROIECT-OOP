@@ -19,8 +19,6 @@ protected:
     int premiu_Total;
     int nr_Maxim_Echipe;
     int nr_Runde;
-    Echipa* Echipe;
-    Runda* Runde;
     vector<Echipa>Echipee;
     vector<Runda>Rundee;
 
@@ -77,13 +75,13 @@ public:
     {
         return nume_Turneu;
     }
-    const Echipa* get_Echipe()const
+    const vector<Echipa> get_Echipe()const
     {
-        return Echipe;
+        return Echipee;
     }
-    const Runda* get_Runde()const
+    const vector<Runda> get_Runde()const
     {
-        return Runde;
+        return Rundee;
     }
     const int get_nr_Runde()const
     {
@@ -100,6 +98,7 @@ public:
     virtual void Citire_Turneu(istream&);
     void Stergere_Echipa();
     void Gasire_Echipa(const Echipa&);
+    void Intoarce_Clasamentul();
     Turneu(int nr_Echipe_actual1 = 0, int nr_Maxim_Echipe1 = 0, int premiu_Total1 = 0, int taxa_Participare1 = 0, int nr_Runde1 = 0, const char nume_Turneu1[30] = "");
     Turneu(const Turneu&);
     ~Turneu();
