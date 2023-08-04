@@ -1,39 +1,45 @@
-# Proiect-OOP
- 
-## Aplicatie de creat Competitii Sportive
+# Sports Competition Creation Application
 
-## Clase implementate:
+## What it does?
+The project allows the user to create different types of tournaments with teams consisting of either chess or tennis players.
 
-### Jucator, Jucator_Sah, Jucator_Tenis, Jucator_Sah_Tenis:
-Reprezinta un om, membru al unei echipe si retine datele acestuia(cnp,nume,prenume,etc);
+After the tournament is created it simulates the rounds based on the match results that the user inputed, and after finishing all the rounds it displays the final standings. 
 
-Este capabila sa citeasca datele unui Jucator si sa le afiseze;
-### Echipa:
-Reprezinta o echipa, formata din mai multi jucatorii are ca date membre(numele echipei,jucatorii,elo-ul echipei,numarul de jucatorii);
+After every match based on the difference in skill of the players and the results between them their ELO (chess standard pointing system) or ATP rankings (tennis standard positioning system) is updated
 
-Este capabila sa citeasca o echipa si membri acesteia, sa calculeze media elo a jucatoriilor ei, aceasta fiind elo-ul echipei si sa le afiseze;
 
-### Meci, Meci_Sah, Meci_Tenis:
-Reprezinta un meci, disputat intre 2 echipe cu un scor si un rezultat final care decide castigatorul;
+## Principal Classes:
+### -Player, ChessPlayer, TennisPlayer, ChessTennisPlayer:
+These classes represent a person, a team member, and store their personal data (CNP, name, surname, etc.).
 
-Este capabila sa afiseze scorul celor doua echipe si castigatorul meciului;
+They are capable of reading and displaying the player's data.
 
-### Runda:
-Este o runda a turneului, formata dintr-o lista de meciuri, retinand numarul rundei actuale si al meciurilor disputate;
+### -Team:
+Represents a team, formed by multiple players, and has member variables (team name, players, team's ELO, number of players).
 
-Este capabila sa afiseze o lista cu toate meciurile jucate si cu rezultatele acestora;
+It is capable of reading a team and its members, calculating the average ELO of its players (which becomes the team's ELO), and displaying them.
 
-### Turneu, Turneu_Sah, Turneu_Tenis:
-Este clasa principala, cu mostenitoarele ei, care este formata dintr-o lista de echipe participante, o lista de runde, numarul acestora, o taxa de inscriere per echipa, numele turneului si fondul de premii;
+### -Match, ChessMatch, TennisMatch:
+Represents a match played between two teams, with a score and a final result that decides the winner.
 
-Este capabila sa citeasca toate echipele participante la turneu si restul datelor membre ale clasei, sa le afiseze;
+It is capable of displaying the score of both teams and the match winner.
 
-### Istoric_Jucator, Istoric_Jucator_Sah, Istoric_Jucator_Tenis:
-Este capabila sa retina istoric de elo al unui jucator, sau de clasament ATP in functie de tipul jucatorului, si sa retina adversarii acestuia
 
-### Premiu, Premiu_Sah, Premiu_Tenis:
-Este interfata responsabila de premii, cu mostenitoarele ei, care retin cate premii se acorda la turneu, cati oamenii au primit premii si o lista cu toate premiile date
+### -Round:
+It is a round of the tournament, formed by a list of matches, keeping track of the current round number and the number of matches played.
 
-### Exceptie_Custom:
-Este o clasa care mosteneste clasa exception si care ii suprascrie functia what(), pentru a afisa un mesaj personalizat
+It is capable of displaying a list of all played matches and their results.
 
+
+### -Tournament, ChessTournament, TennisTournament:
+This is the main class with its subclasses, formed by a list of participating teams, a list of rounds, the number of rounds, an entry fee per team, the tournament's name, and the prize fund.
+
+It is capable of reading all the participating teams in the tournament and the rest of the class member data, and displaying them.
+
+
+### -PlayerHistory, ChessPlayerHistory, TennisPlayerHistory:
+It is capable of keeping track of a player's ELO history or ATP rankings, depending on the player's type, and recording their opponents.
+
+
+### -Prize, ChessPrize, TennisPrize:
+This is an interface responsible for prizes, with its subclasses, which keep track of the number of prizes awarded at the tournament, how many people have received prizes, and a list of all given prizes.
